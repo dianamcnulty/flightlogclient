@@ -14,13 +14,6 @@
       <button id='logout'name='logout'>Log Out</button>
       <section id='auth'>
         <!--log in forms-->
-        <form id='sign-up'>
-          <h3>First Visit? Please Sign Up!</h3>
-          <input class='login' name="credentials[email]" type='text' placeholder="username">
-          <input class='login' name="credentials[password]" type="password" placeholder="password">
-          <input class='login' name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-          <button type='submit'>Sign Up</button>
-        </form>
         <h3 id='signupmessage'></h3>
         <form id='log-in'>
           <h3 id='loginmessage'>Already have a login ID? Go ahead and log in!</h3>
@@ -28,11 +21,18 @@
           <input class='login' name="credentials[password]" type="password" placeholder="password">
           <button type='submit'>Log In</button>
         </form>
+        <a id='sign-up-link'>First Visit? Please Sign Up!</a>
+        <form id='sign-up'>
+          <input class='login' name="credentials[email]" type='text' placeholder="username">
+          <input class='login' name="credentials[password]" type="password" placeholder="password">
+          <input class='login' name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+          <button type='submit'>Sign Up</button>
+        </form>
         <div class='alert' id='auth-error'>
           <h3>Sorry, that didn't work. Please try again</h3>
         </div>
       </section>
-
+      <img src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/master/assets/images/glidersketch.jpg" alt='paraglider-sketch' >
       <!--password update stuff-->
       <form id='password-update'>
         <p>To update your password, please enter your current password, then your new password and click "submit"</p>

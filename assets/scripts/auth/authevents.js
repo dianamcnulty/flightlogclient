@@ -39,6 +39,7 @@ const clickHandlers = function () {
     $('#password-update').show()
   })
   $('#password-update').on('submit', passwordBehavior)
+  $('#sign-up-link').on('click', () => { $('#sign-up').show() })
 }
 module.exports = {
   clickHandlers // need to import to index, then call this function at ready
