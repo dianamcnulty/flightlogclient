@@ -2,6 +2,7 @@
 const authevents = require('./auth/authevents')
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const view = require('./views')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -14,4 +15,5 @@ $(() => {
 // require('./example')
 $(() => {
   authevents.clickHandlers()
+  view.preLogInView()
 })

@@ -1,4 +1,5 @@
 const store = require('../store')
+const view = require('../views')
 
 const signUpSuccess = function (data) {
   console.log('signed up successfully', store)
@@ -21,9 +22,8 @@ const logInFail = function () {
 }
 const logInSuccess = function (data) {
   store.user = data.user
-  // console.log('logged in successfully', store)
-  // console.log('logged in successfully', store)
-  $('.error').hide()
+  console.log('logged in successfully', store)
+  view.landingView()
 }
 const logOutSuccess = function (data) {
   store.user = null
