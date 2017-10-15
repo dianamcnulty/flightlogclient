@@ -3,34 +3,44 @@
     <head>
       <title>Flight Log</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
       <h1>Flight Log</h1>
+      <button id='logout'name='logout'>Log Out</button>
       <section id='auth'>
-              <form id='sign-up'>
-                <h3>First Visit? Please Sign Up!</h3>
-                <input style="display: block; margin:auto;" class='login' name="credentials[email]" type='text' placeholder="username">
-                <input class='login' name="credentials[password]" type="password" placeholder="password">
-                <input class='login' name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-                <button type='submit'>Sign Up</button>
-              </form>
-              <h3 id='signupmessage'></h3>
-              <form id='log-in'>
-                <h3 id='loginmessage'>Already have a login ID? Go ahead and log in!</h3>
-                <input class='login' name="credentials[email]" type='text' placeholder="username">
-                <input class='login' name="credentials[password]" type="password" placeholder="password">
-                <button type='submit'>Log In</button>
-              </form>
-              <div class='error'>
-                <h3>Sorry, that didn't work. Please try again</h3>
-              </div>
-            </section>
+        <!--log in forms-->
+        <form id='sign-up'>
+          <h3>First Visit? Please Sign Up!</h3>
+          <input class='login' name="credentials[email]" type='text' placeholder="username">
+          <input class='login' name="credentials[password]" type="password" placeholder="password">
+          <input class='login' name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+          <button type='submit'>Sign Up</button>
+        </form>
+        <h3 id='signupmessage'></h3>
+        <form id='log-in'>
+          <h3 id='loginmessage'>Already have a login ID? Go ahead and log in!</h3>
+          <input class='login' name="credentials[email]" type='text' placeholder="username">
+          <input class='login' name="credentials[password]" type="password" placeholder="password">
+          <button type='submit'>Log In</button>
+        </form>
+        <div class='alert'>
+          <h3>Sorry, that didn't work. Please try again</h3>
+        </div>
+      </section>
+
+      <!--password update stuff-->
+      <button id='show-password-form'>Update Password</button>
+      <form id='password-update'>
+        <p>To update your password, please enter your current password, then your new password and click "submit"</p>
+        <input id='oldpass' name="passwords[old]" type='password' placeholder="old password">
+        <input id='newpass' name="passwords[new]" type="password" placeholder="new password">
+        <button type='submit'>Submit</button>
+      </form>
+      <h3 class='alert' id='password-message'></h3>
     </body>
 </html>

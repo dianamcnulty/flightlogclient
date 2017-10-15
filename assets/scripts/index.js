@@ -1,5 +1,5 @@
 'use strict'
-
+const authevents = require('./auth/authevents')
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 
@@ -12,3 +12,6 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+$(() => {
+  authevents.clickHandlers()
+})
