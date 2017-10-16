@@ -6,6 +6,7 @@ const preLogInView = function () {
   $('#loginmessage').show()
   $('#show-password-form').hide()
   $('#password-update').hide()
+  $('#flight-table-contents').hide()
 }
 const landingView = function () {
   $('#logout').show()
