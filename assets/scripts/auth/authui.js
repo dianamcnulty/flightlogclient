@@ -1,10 +1,10 @@
 const store = require('../store')
-const view = require('../views')
+const view = require('../nav/views')
 
 const signUpSuccess = function (data) {
   console.log('signed up successfully', store)
   $('#signupmessage').text('Thanks for signing up! Enter your new user name and password to log in.')
-  $('.error').hide()
+  $('#auth-error').hide()
   $('#sign-up').hide()
   $('#loginmessage').hide()
   $('.login').val('')
@@ -12,27 +12,23 @@ const signUpSuccess = function (data) {
 }
 const signUpFail = function () {
   $('#auth-error').hide()
+  $('#auth-error').text()
   $('#auth-error').fadeIn(200)
 }
 const logInFail = function () {
   $('#auth-error').hide()
   $('#auth-error').fadeIn(200)
-  $('#sign-up').show()
   $('.login').val('')
 }
 const logInSuccess = function (data) {
   store.user = data.user
   view.landingView()
+  $('.login').val('')
 }
 const logOutSuccess = function (data) {
   store.user = null
   // console.log('logged out successfully')
-  $('#auth').show()
-  $('#sign-up').show()
-  $('#signupmessage').show()
-  $('.error').hide()
-  $('.login').val('')
-  $('loginmessage').show()
+  view.preLogInView()
 }
 const passwordSuccess = function (data) {
   // console.log('password changed successfully')

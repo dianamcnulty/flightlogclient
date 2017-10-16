@@ -4,16 +4,23 @@ const preLogInView = function () {
   $('#sign-up').hide()
   $('.alert').hide()
   $('#loginmessage').show()
-  $('#show-password-form').hide()
   $('#password-update').hide()
   $('#flight-table-contents').hide()
+  $('#navbar').hide()
+  $('#password-update').hide()
+  $('#sign-up-link').show()
 }
 const landingView = function () {
   $('#logout').show()
   $('#auth').hide()
   $('.alert').text('')
+  $('#navbar').show()
+}
+const profileView = function () {
+  $('#password-update').show()
 }
 module.exports = {
   preLogInView,
-  landingView
+  landingView,
+  profileView
 }

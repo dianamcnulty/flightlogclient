@@ -35,11 +35,11 @@ const clickHandlers = function () {
   $('#sign-up').on('submit', signUpBehavior)
   $('#log-in').on('submit', logInBehavior)
   $('#logout').on('click', logOutBehavior)
-  $('#show-password-form').on('click', () => {
-    $('#password-update').show()
-  })
   $('#password-update').on('submit', passwordBehavior)
-  $('#sign-up-link').on('click', () => { $('#sign-up').show() })
+  $('#sign-up-link').on('click', () => {
+    $('#sign-up').show()
+    $('#sign-up-link').hide()
+  })
 }
 module.exports = {
   clickHandlers // need to import to index, then call this function at ready
