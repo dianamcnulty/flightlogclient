@@ -41,12 +41,26 @@
           <h3>Sorry, that didn't work. Please try again</h3>
         </div>
       </section>
-
-      <!-- image
-      img src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/master/assets/images/glidersketch.jpg" alt='paraglider-sketch'> -->
-      <!--password update stuff-->
+      <h2 id="section-header"></h2>
+      <!--  <img id='pg-sketch' src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/master/assets/images/glidersketch.jpg" alt='paraglider-sketch'> -->
+      <section id='add-flights-view'>
+        <form id='new-flight-form' autocomplete="on">
+          Date:<input type="date" name="date" autocomplete="off"><br>
+          Time: <input type="time" name="time" autocomplete="off"><br>
+          Location: <input type="text" name="launch" placeholder="Launch Site"><br>
+          Landing Zone: <input type="text" name="launch" placeholder="Landing Zone"><br>
+          Duration: <input type="number" name="hrs" min="0" max="24" placeholder="hrs." autocomplete="off">
+          <input name="min" type="number" min="0" max="60" placeholder="mins" autocomplete="off"><br>
+          Distance: <input type="number" name="distance" placeholder="km"><br>
+          Glider: <input type="text" name="wing" placeholder="Glider"><br>
+          Notes: <br>
+          <textarea rows="4" cols="50" name="notes" form="new-flight-form" placeholder="enter notes here..." autocomplete="off">
+              Enter text here...</textarea>
+          <input type="submit">
+        </form>
+      </section>
       <table id='flight-table-contents'>
-        <tr>
+        <tr class='table-header'>
           <td>Flight Type</td>
           <td>Date</td>
           <td>Time</td>
@@ -55,10 +69,15 @@
           <td>Launch Location</td>
           <td>Landing Location</td>
           <td>Wing</td>
-          <td>Notes
+          <td>Notes</td>
+          <td></td>
         </tr>
       </table>
-
+      <section id='stats-view'>
+        <h3>Number of Flights:</h3>
+        <h3>Number of Sites:</h3>
+        <h3>Flight Hours:</h3>
+      </section>
       <form id='password-update'>
         <p>To update your password, please enter your current password, then your new password and click "submit"</p>
         <input id='oldpass' name="passwords[old]" type='password' placeholder="old password">

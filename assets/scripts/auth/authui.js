@@ -12,7 +12,6 @@ const signUpSuccess = function (data) {
 }
 const signUpFail = function () {
   $('#auth-error').hide()
-  $('#auth-error').text()
   $('#auth-error').fadeIn(200)
 }
 const logInFail = function () {
