@@ -1,7 +1,8 @@
 const config = require('../config')
 const store = require('../store')
-
-const newFlightRequest = function (flightType, date, time, distance, duration, launch, lz, wing, notes) {
+// pass in "data" to form
+// when ajax is called set data first with this: const data = getFormFields(this)
+const newFlightRequest = function (data) {
   console.log('sending new flight call - token is', store.user.token)
   return $.ajax({
     url: config.apiOrigin + '/flights',
@@ -9,19 +10,20 @@ const newFlightRequest = function (flightType, date, time, distance, duration, l
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-      'flight': {
-        'flight_type': flightType,
-        'date': date,
-        'time': time,
-        'distance': distance,
-        'duration': duration,
-        'launch': launch,
-        'lz': lz,
-        'wing': wing,
-        'notes': notes
-      }
-    }
+    data: data
+    // {
+    //   'flight': {
+    //     'flight_type': flightType,
+    //     'date': date,
+    //     'time': time,
+    //     'distance': distance,
+    //     'duration': duration,
+    //     'launch': launch,
+    //     'lz': lz,
+    //     'wing': wing,
+    //     'notes': notes
+    //   }
+    // }
   })
 }
 
