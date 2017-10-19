@@ -5,7 +5,11 @@ const getFlightsSuccess = function (data) {
   console.log(data)
   const showFlightTable = showFlightsTemplate({ flights: data.flights })
   $('#flight-table-contents').append(showFlightTable)
+  $('.edit').on('click', function (event) {
+    console.log('clicked edit', event.target.categ.data('id'))
+  })
 }
+
 const listFlightsBehavior = function () {
   event.preventDefault()
   flightAjax.getAllFlights()
