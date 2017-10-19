@@ -2,7 +2,7 @@ const store = require('../store')
 const view = require('../nav/views')
 
 const signUpSuccess = function (data) {
-  console.log('signed up successfully', store)
+  // console.log('signed up successfully', store)
   $('#signupmessage').text('Thanks for signing up! Enter your new user name and password to log in.')
   $('#auth-error').hide()
   $('#sign-up').hide()
@@ -21,6 +21,7 @@ const logInFail = function () {
 }
 const logInSuccess = function (data) {
   store.user = data.user
+  console.log('signed up successfully', store)
   view.landingView()
   $('.login').val('')
 }
