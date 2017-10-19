@@ -25,8 +25,18 @@ const getAllFlights = function () {
     }
   })
 }
-
+const getOneFlight = function (id) {
+  console.log('sending get flights call')
+  return $.ajax({
+    url: config.apiOrigin + '/flights/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   newFlightRequest,
-  getAllFlights
+  getAllFlights,
+  getOneFlight
 }
