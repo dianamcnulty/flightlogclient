@@ -1,8 +1,8 @@
 <!-- Diana, look at the training  for handlebars for syntax help -->
 {{#each flights as |flight|}}
 
-<table data-id="{{flight.id}}">
-  <tr>
+<!-- <table data-id=""> -->
+  <tr data-id="{{flight.id}}">
     <td>{{flight.type}}</td>
     <td>{{flight.date}}</td>
     <td>{{flight.time}}</td>
@@ -13,7 +13,8 @@
     <td>{{flight.wing}}</td>
     <td>{{flight.notes}}</td>
     <td><button class='edit'>edit</button></td>
+
   </tr>
-</table>
+<!-- </table> -->
 
 {{/each}}
