@@ -6,7 +6,8 @@ const getFlightsSuccess = function (data) {
   const showFlightTable = showFlightsTemplate({ flights: data.flights })
   $('#flight-table-contents').append(showFlightTable)
   $('.edit').on('click', function (event) {
-    console.log('clicked edit', event.target.categ.data('id'))
+    console.log('clicked edit', event.target.dataset.id)
+    // event.target.dataset.id === id of the flight
   })
 }
 
