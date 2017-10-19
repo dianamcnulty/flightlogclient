@@ -45,6 +45,7 @@
       <!--  <img id='pg-sketch' src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/master/assets/images/glidersketch.jpg" alt='paraglider-sketch'> -->
       <section id='add-flights-view'>
         <form id='new-flight-form' autocomplete="on">
+          Flight Type:<input class="flight-input" type="string" name="flight[flightType]" autocomplete="off" placeholder="pg, hg, ppg, etc."><br>
           Date:<input class="flight-input" type="date" name="flight[date]" autocomplete="off"><br>
           Time: <input class="flight-input" type="time" name="flight[time]" autocomplete="off"><br>
           Location: <input class="flight-input" type="text" name="flight[launch]" placeholder="Launch Site"><br>
@@ -59,20 +60,7 @@
           <button type="submit">Save</button>
         </form>
       </section>
-      <table id='flight-table-contents'>
-        <tr class='table-header'>
-          <td>Flight Type</td>
-          <td>Date</td>
-          <td>Time</td>
-          <td>Distance</td>
-          <td>Duration</td>
-          <td>Launch Location</td>
-          <td>Landing Location</td>
-          <td>Wing</td>
-          <td>Notes</td>
-          <td></td>
-        </tr>
-      </table>
+      <div id='flight-table-contents'></div>
       <section id='stats-view'>
         <h3>Number of Flights:</h3>
         <h3>Number of Sites:</h3>

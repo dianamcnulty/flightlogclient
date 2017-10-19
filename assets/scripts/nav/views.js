@@ -1,3 +1,4 @@
+const flightListEvents = require('../flightevents/flightlist_events')
 const preLogInView = function () {
   $('#logout').hide()
   $('#auth').show()
@@ -40,6 +41,7 @@ const showFlightsView = function () {
   $('#flight-table-contents').show()
   $('#add-flights-view').hide()
   $('#section-header').text('Your Flight History')
+  flightListEvents.listFlightsBehavior()
 }
 const addFlightsView = function () {
   console.log('clicked the add button')

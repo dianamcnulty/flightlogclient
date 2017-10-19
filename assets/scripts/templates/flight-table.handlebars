@@ -1,20 +1,30 @@
-<!-- Diana, look at the training  for handlebars for syntax help -->
-{{#each flights as |flight|}}
-
-<!-- <table data-id=""> -->
-  <tr data-id="{{flight.id}}">
-    <td>{{flight.type}}</td>
-    <td>{{flight.date}}</td>
-    <td>{{flight.time}}</td>
-    <td>{{flight.distance}}</td>
-    <td>{{flight.duration}}</td>
-    <td>{{flight.launch}}</td>
-    <td>{{flight.lz}}</td>
-    <td>{{flight.wing}}</td>
-    <td>{{flight.notes}}</td>
-    <td><button class='edit'>edit</button></td>
-
-  </tr>
-<!-- </table> -->
-
-{{/each}}
+<table>
+  <thead class='table-header'>
+      <th>Flight Type</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>kms.</th>
+      <th>hrs.</th>
+      <th>Launch Location</th>
+      <th>Landing Location</th>
+      <th>Wing</th>
+      <th>Notes</th>
+      <th></th>
+  </thead>
+  <tbody
+  {{#each flights as |flight|}}>
+    <tr data-id="{{flight.id}}">
+      <td>{{flight.flight_type}}</td>
+      <td>{{flight.date}}</td>
+      <td>{{flight.time}}</td>
+      <td>{{flight.distance}}</td>
+      <td>{{flight.duration}}</td>
+      <td>{{flight.launch}}</td>
+      <td>{{flight.lz}}</td>
+      <td>{{flight.wing}}</td>
+      <td>{{flight.notes}}</td>
+      <td><button class='edit'>edit</button></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

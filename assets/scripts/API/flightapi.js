@@ -5,8 +5,8 @@ const store = require('../store')
 const newFlightRequest = function (data) {
   console.log('clicked submit - data not sent', data)
   return $.ajax({
-    // url: config.apiOrigin + '/flights',
-    url: 'http://localhost:4741/flights',
+    url: config.apiOrigin + '/flights',
+    // url: 'http://localhost:4741/flights',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -15,6 +15,18 @@ const newFlightRequest = function (data) {
   })
 }
 
+const getAllFlights = function () {
+  console.log('sending get flights call')
+  return $.ajax({
+    url: config.apiOrigin + '/flights',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  newFlightRequest
+  newFlightRequest,
+  getAllFlights
 }
