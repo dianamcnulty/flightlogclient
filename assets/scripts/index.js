@@ -4,7 +4,7 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const view = require('./nav/views')
 const navEvents = require('./nav/navevents')
-
+const flightClickers = require('./flightevents/flightclicks')
 $(() => {
   setAPIOrigin(location, config)
 })
@@ -18,4 +18,5 @@ $(() => {
   authevents.clickHandlers()
   view.preLogInView()
   navEvents.navClickHandlers()
+  flightClickers.flightClicks()
 })
