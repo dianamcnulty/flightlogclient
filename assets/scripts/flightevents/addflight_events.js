@@ -12,6 +12,7 @@ const addFlightUi = require('../flightUI/addflightUI')
 const newFlightBehavior = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
+  console.log('sumbitting the add form', this)
   flightAjax.newFlightRequest(data)
     .then(addFlightUi.newFlightSuccess, addFlightUi.newFlightFailure)
 }

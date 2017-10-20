@@ -1,6 +1,7 @@
 const showFlightsTemplate = require('../templates/flight-table.handlebars')
 const editFlightTemplate = require('../templates/edit-flight.handlebars')
 const flightAjax = require('../API/flightapi')
+const getFormFields = require(`../../../lib/get-form-fields`)
 
 const getFlightsSuccess = function (data) {
   console.log(data)
@@ -17,10 +18,18 @@ const listFlightsBehavior = function () {
       console.log('flight list failed')
     })
 }
+const editFlight = function (event) {
+  event.preventDefault()
+  //const data = getFormFields(this)
+  console.log('sumbitting the update form', this)
+  // flightAjax.updateFlightRequest(data)
+  //   .then(addFlightUi.newFlightSuccess, addFlightUi.newFlightFailure)
+}
 const getOneFlightSuccess = function (data) {
   console.log('flight success!', data)
   const editFlightModal = editFlightTemplate({ flight: data.flight })
   $('#edit-flight-content').append(editFlightModal)
+  $('#flight-update-form').on('submit', editFlight)
 }
 
 const editButtonBehavior = function () {
