@@ -29,7 +29,10 @@
         </button>
       </td>
       <td>
-        <button class='delete' data-id="{{flight.id}}">delete</button>
+        <button data-id="{{flight.id}}" type="button" class="btn delete" data-toggle="modal" data-target="#delete-modal">
+          Delete
+        </button>
+        <!-- <button class='delete' data-id="{{flight.id}}">delete</button> -->
       </td>
     </tr>
     {{/each}}

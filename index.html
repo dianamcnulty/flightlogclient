@@ -62,8 +62,9 @@
         <h3 id='flight-error' class='alert'></h3>
       </section>
       <div id='flight-table-contents'></div>
+<!-- modal for edit flight -->
       <div>
-        <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
 
             <div class="modal-content" >
@@ -84,6 +85,27 @@
           </div>
         </div>
       </div>
+<!--  delete modal here -->
+      <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">Delete your Flight?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to delete this flight? It will be gone forever!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-dismiss="modal">Nevermind.</button>
+              <button id='confirm-delete' data-id="" type="button" class="btn">Delete it!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Stats stuff here -->
       <section id='stats-view'>
         <h3>Number of Flights:</h3><span id='flight-count'></span>
         <h3>Number of Sites:</h3><span id='site-count'></span>
