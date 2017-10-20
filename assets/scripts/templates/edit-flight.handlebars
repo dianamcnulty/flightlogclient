@@ -3,15 +3,15 @@
         <form autocomplete="on" id='flight-update-form'>
           <input type="hidden" name='flight[id]' value='{{flight.id}}'>
           <label>Flight Type:</label>
-          <input class="flight-input" type="text" name="flight[flight_type]" required value='{{flight.flight_type}}'><br>
+          <input class="flight-input" type="text" name="flight[flight_type]" value='{{flight.flight_type}}'><br>
           <label>Date:</label><input class="flight-input" type="date" name="flight[date]" required autocomplete="off" value='{{flight.date}}'><br>
           <label>Time:</label> <input class="flight-input" type='text' name="flight[time]" required autocomplete="off" value='{{flight.time}}'><br>
-          <label>Location:</label> <input class="flight-input" type="text" required name="flight[launch]" value='{{flight.launch}}'><br>
-          <label>Landing Zone:</label> <input class="flight-input" type="text" required name="flight[lz]" value='{{flight.lz}}'><br>
-          <label>Duration:</label> <input class="flight-input" type="number" required step="0.01" name="flight[duration]"  value='{{flight.duration}}' autocomplete="off"><span>hrs.</span>
+          <label>Location:</label> <input class="flight-input" type="text" name="flight[launch]" value='{{flight.launch}}'><br>
+          <label>Landing Zone:</label> <input class="flight-input" type="text" name="flight[lz]" value='{{flight.lz}}'><br>
+          <label>Duration:</label> <input class="flight-input" type="number" step="0.01" name="flight[duration]"  value='{{flight.duration}}' autocomplete="off"><span>hrs.</span>
           <br>
-          <label>Distance:</label> <input class="flight-input" type="number" required step="0.01" required name="flight[distance]" placeholder='km' value='{{flight.distance}}'><br>
-          <label>Glider:</label> <input class="flight-input" type="text" required name="flight[wing]" placeholder="glider" value='{{flight.wing}}' ><br>
+          <label>Distance:</label> <input class="flight-input" type="number" step="0.01" name="flight[distance]" placeholder='km' value='{{flight.distance}}'><br>
+          <label>Glider:</label> <input class="flight-input" type="text" name="flight[wing]" placeholder="glider" value='{{flight.wing}}' ><br>
           <label>Notes:</label>
           <input class="flight-input" type='text' style='width: 50%;' name="flight[notes]" placeholder="enter notes here..." autocomplete="off" value='{{flight.notes}}'><br>
           <input type="submit" value='Save Changes'>

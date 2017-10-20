@@ -11,19 +11,24 @@ const getFlightsSuccess = function (data) {
 }
 
 const listFlightsBehavior = function () {
-  event.preventDefault()
+  // event.preventDefault() // I think this isn't needed
   flightAjax.getAllFlights()
     .then(getFlightsSuccess, function () {
       // put the 'catch here' or replace this function with that behavior
       console.log('flight list failed')
     })
 }
+const editFlightSuccess = function () {
+  $('#edit-modal').modal('toggle') // close modal on successful update
+  listFlightsBehavior() // refreshes the flight list.
+}
 const editFlight = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   console.log('sumbitting the update form', data)
   flightAjax.updateFlightRequest(data)
-    .then(() => { console.log('flight updated') })
+    .then(editFlightSuccess)
+    .catch(() => { $('#update-error').text('Sorry, that didn\'t work. Please try again. Please note, Date and time are required.') })
 }
 const getOneFlightSuccess = function (data) {
   console.log('flight success!', data)
