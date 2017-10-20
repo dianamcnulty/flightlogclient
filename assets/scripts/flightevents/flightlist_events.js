@@ -1,12 +1,12 @@
 const showFlightsTemplate = require('../templates/flight-table.handlebars')
-const editFlightsTemplate = require('../templates/edit-flight.handlebars')
+const editFlightTemplate = require('../templates/edit-flight.handlebars')
 const flightAjax = require('../API/flightapi')
 
 const getFlightsSuccess = function (data) {
   console.log(data)
   const showFlightTable = showFlightsTemplate({ flights: data.flights })
   $('#flight-table-contents').append(showFlightTable)
-  $('.edit').on('click', editFlightBehavior)
+  $('.edit').on('click', editButtonBehavior)
 }
 
 const listFlightsBehavior = function () {
@@ -17,12 +17,19 @@ const listFlightsBehavior = function () {
       console.log('flight list failed')
     })
 }
-const editFlightBehavior = function () {
+const getOneFlightSuccess = function (data) {
+  console.log('flight success!', data)
+  const editFlightModal = editFlightTemplate({ flight: data.flight })
+  $('#edit-flight').append(editFlightModal)
+  $('.edit').on('click', editButtonBehavior)
+}
+
+const editButtonBehavior = function () {
   console.log('clicked edit', event.target.dataset.id)
   const id = event.target.dataset.id
   // event.target.dataset.id === id of the flight
   flightAjax.getOneFlight(id)
-    .then((data) => { console.log('flight success!', data) },
+    .then(getOneFlightSuccess,
       (err) => { console.log('flight fail!', err) })
 }
 
