@@ -1,12 +1,13 @@
 
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Update This Flight</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <form autocomplete="on" id='flight-update-form'>
+          <input type="hidden" name=flight[id] value={{flight.id}}>
           Flight Type:<input class="flight-input" type="string" name="flight[flightType]" required value='{{flight.flight_type}}'><br>
           Date:<input class="flight-input" type="date" name="flight[date]" required autocomplete="off" value={{flight.date}}><br>
           Time: <input class="flight-input" name="flight[time]" required autocomplete="off" value={{flight.time}}><br>
@@ -24,5 +25,5 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <!-- <button id='edit-save-button' type="button" class="btn btn-primary">Save changes</button> -->
+        <!-- <button id='edit-save-button' type="button" class="btn btn-primary">Save changes</button> -->>
       </div>

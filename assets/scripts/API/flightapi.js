@@ -35,6 +35,18 @@ const getOneFlight = function (id) {
     }
   })
 }
+const updateFlightRequest = function (data) {
+  console.log('sending new flight data', data)
+  return $.ajax({
+    url: config.apiOrigin + '/flight/'+ id,
+    // url: 'http://localhost:4741/flights',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
 module.exports = {
   newFlightRequest,
   getAllFlights,
