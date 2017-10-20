@@ -36,9 +36,10 @@ const getOneFlight = function (id) {
   })
 }
 const updateFlightRequest = function (data) {
-  console.log('sending new flight data', data)
+  const id = parseInt(data['flight']['id'])
+  console.log('id is', id, 'id type is', typeof id)
   return $.ajax({
-    url: config.apiOrigin + '/flight/'+ id,
+    url: config.apiOrigin + '/flights/' + id,
     // url: 'http://localhost:4741/flights',
     method: 'PATCH',
     headers: {
@@ -50,5 +51,6 @@ const updateFlightRequest = function (data) {
 module.exports = {
   newFlightRequest,
   getAllFlights,
-  getOneFlight
+  getOneFlight,
+  updateFlightRequest
 }

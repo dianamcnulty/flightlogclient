@@ -22,8 +22,8 @@ const editFlight = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   console.log('sumbitting the update form', data)
-  // flightAjax.updateFlightRequest(data)
-  //   .then(addFlightUi.newFlightSuccess, addFlightUi.newFlightFailure)
+  flightAjax.updateFlightRequest(data)
+    .then(() => { console.log('flight updated') })
 }
 const getOneFlightSuccess = function (data) {
   console.log('flight success!', data)
