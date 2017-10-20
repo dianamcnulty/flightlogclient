@@ -7,7 +7,7 @@ const getFlightsSuccess = function (data) {
   console.log(data)
   const showFlightTable = showFlightsTemplate({ flights: data.flights })
   $('#flight-table-contents').html(showFlightTable)
-  $('.edit').on('click', editButtonBehavior)
+  // $('.edit').on('click', editButtonBehavior)
 }
 
 const listFlightsBehavior = function () {
@@ -42,5 +42,6 @@ const editButtonBehavior = function () {
 
 module.exports = {
   listFlightsBehavior,
-  editFlight
+  editFlight,
+  editButtonBehavior
 }
