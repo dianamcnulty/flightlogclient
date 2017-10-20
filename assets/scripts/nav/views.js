@@ -47,6 +47,7 @@ const addFlightsView = function () {
   console.log('clicked the add button')
   $('#password-update').hide()
   $('#pg-sketch').hide()
+  $('#flight-error').hide()
   $('#flight-table-contents').hide()
   $('#add-flights-view').show()
   $('#section-header').text('Add a Flight')

@@ -1,6 +1,6 @@
 const flightAjax = require('../API/flightapi')
 const getFormFields = require(`../../../lib/get-form-fields`)
-const flightUi = require('../flightUI/addflightUI')
+const addFlightUi = require('../flightUI/addflightUI')
 // const views = require('../nav/views')
 
 // const newFlightSuccess = function () {
@@ -13,12 +13,7 @@ const newFlightBehavior = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   flightAjax.newFlightRequest(data)
-    .then(flightUi.newFlightSuccess, function (reason) {
-      (console.log('why is this happpeniiiiiings??', reason))
-    })
-
-    // (flightUi.newFlightSuccess)
-    // .catch(console.log('why is this happpeniiiiiings??'))
+    .then(addFlightUi.newFlightSuccess, addFlightUi.newFlightFailure)
 }
 
 module.exports = {
