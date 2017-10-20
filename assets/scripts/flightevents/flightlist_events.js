@@ -1,4 +1,5 @@
 const showFlightsTemplate = require('../templates/flight-table.handlebars')
+const editFlightsTemplate = require('../templates/edit-flight.handlebars')
 const flightAjax = require('../API/flightapi')
 
 const getFlightsSuccess = function (data) {
