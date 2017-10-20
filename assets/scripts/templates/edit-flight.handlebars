@@ -8,9 +8,9 @@
   Duration: <input class="flight-input" type="number" step="0.01" name="flight[duration]"  value={{flight.duration}} autocomplete="off">hrs.
   <!-- <input name="min" class="flight-input" type="number" min="0" max="60" placeholder="mins" autocomplete="off"> -->
   <br>
-  Distance: <input class="flight-input" name="flight[distance]" placeholder="km"><br>
-  Glider: <input class="flight-input" type="text" name=name="flight[wing]" value={{flight.wing}}><br>
+  Distance: <input class="flight-input" name="flight[distance]" placeholder='km' value={{flight.distance}}><br>
+  Glider: <input class="flight-input" type="text" name="flight[wing]" value={{flight.wing}}><br>
   Notes: <br>
-  <textarea class="flight-input" rows="4" cols="50" name=name="flight[notes]" form="new-flight-form" placeholder="enter notes here..." autocomplete="off" value={{flight.notes}}></textarea>
+  <textarea class="flight-input" rows="4" cols="50" name="flight[notes]" form="new-flight-form" placeholder="enter notes here..." autocomplete="off" >{{flight.notes}}</textarea>
   <button type="submit">Save</button>
 </form>
