@@ -20,7 +20,7 @@ const listFlightsBehavior = function () {
 const getOneFlightSuccess = function (data) {
   console.log('flight success!', data)
   const editFlightModal = editFlightTemplate({ flight: data.flight })
-  $('#edit-flight').append(editFlightModal)
+  $('#edit-flight-content').append(editFlightModal)
 }
 
 const editButtonBehavior = function () {

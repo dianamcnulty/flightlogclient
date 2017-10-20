@@ -23,7 +23,14 @@
       <td>{{flight.lz}}</td>
       <td>{{flight.wing}}</td>
       <td>{{flight.notes}}</td>
-      <td ><button class='edit' data-id="{{flight.id}}">edit</button></td>
+      <td >
+        <button data-id="{{flight.id}}" type="button" class="btn btn-primary edit" data-toggle="modal" data-target="#edit-modal">
+          Edit
+        </button>
+      </td>
+      <td>
+        <button class='delete' data-id="{{flight.id}}">delete</button>
+      </td>
     </tr>
     {{/each}}
   </tbody>
