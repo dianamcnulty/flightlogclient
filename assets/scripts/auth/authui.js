@@ -21,7 +21,7 @@ const logInFail = function () {
 }
 const logInSuccess = function (data) {
   store.user = data.user
-  console.log('signed up successfully', store)
+  console.log('signed in successfully', store)
   view.landingView()
   $('.login').val('')
 }

@@ -12,7 +12,7 @@ const signUpBehavior = function (event) {
 const logInBehavior = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('I clicked the login button', data)
+  // console.log('I clicked the login button', data)
   api.logIn(data)
     .then(authui.logInSuccess)
     .catch(authui.logInFail)
