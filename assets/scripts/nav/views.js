@@ -1,4 +1,5 @@
 const flightListEvents = require('../flightevents/flightlist_events')
+const flightStatEvents = require('../flightevents/stats_events')
 const preLogInView = function () {
   $('#logout').hide()
   $('#auth').show()
@@ -54,6 +55,7 @@ const addFlightsView = function () {
   $('#stats-view').hide()
 }
 const statView = function () {
+  flightStatEvents.setStats()
   $('#stats-view').show()
   $('#password-update').hide()
   $('#pg-sketch').hide()
