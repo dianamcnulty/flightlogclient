@@ -21,7 +21,6 @@ const getOneFlightSuccess = function (data) {
   console.log('flight success!', data)
   const editFlightModal = editFlightTemplate({ flight: data.flight })
   $('#edit-flight').append(editFlightModal)
-  $('.edit').on('click', editButtonBehavior)
 }
 
 const editButtonBehavior = function () {
