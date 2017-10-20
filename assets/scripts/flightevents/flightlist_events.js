@@ -20,7 +20,7 @@ const listFlightsBehavior = function () {
 }
 const editFlight = function (event) {
   event.preventDefault()
-  //const data = getFormFields(this)
+  // const data = getFormFields(this)
   console.log('sumbitting the update form', this)
   // flightAjax.updateFlightRequest(data)
   //   .then(addFlightUi.newFlightSuccess, addFlightUi.newFlightFailure)
