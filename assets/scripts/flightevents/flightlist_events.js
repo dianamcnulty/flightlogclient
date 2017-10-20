@@ -11,17 +11,20 @@ const getFlightsSuccess = function (data) {
 const listFlightsBehavior = function () {
   event.preventDefault()
   flightAjax.getAllFlights()
-    .then(getFlightsSuccess)
-    .catch(console.log('flight list failed'))
+    .then(getFlightsSuccess, function () {
+      // put the 'catch here' or replace this function with that behavior
+      console.log('flight list failed')
+    })
 }
 const editFlightBehavior = function () {
   console.log('clicked edit', event.target.dataset.id)
   const id = event.target.dataset.id
   // event.target.dataset.id === id of the flight
   flightAjax.getOneFlight(id)
-    .then((data) => { console.log('flight success!', data) })
-    .catch(console.log('whoops error getting the flight'))
+    .then((data) => { console.log('flight success!', data) },
+      (err) => { console.log('flight fail!', err) })
 }
+
 module.exports = {
   listFlightsBehavior
 }
