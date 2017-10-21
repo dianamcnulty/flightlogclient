@@ -42,11 +42,32 @@ const editButtonBehavior = function () {
   // event.target.dataset.id === id of the flight
   flightAjax.getOneFlight(id)
     .then(getOneFlightSuccess)
-    .catch(() => { console.log('flight fail!') })
+    .catch(() => { $('#edit-flight-content').html("<p class='alert'>Sorry there was an error retrieving your flight's data, please try again later.</p>") })
+}
+
+const deleteButtonBehavior = function (event) {
+  // delete button needs to send ID to modal's 'confirm-delete' button
+  const id = event.target.dataset.id
+  $('#confirm-delete').attr('data-id', id)
+}
+const deleteFlightSuccess = function () {
+  $('#delete-modal').modal('toggle') // close modal on successful update
+  listFlightsBehavior() // refreshes the flight list.
+  $('#section-alerts').text('Your flight was successfully deleted')
+  $('#delete-modal-alert').text('')
+}
+const confirmDeleteBehavior = function (event) {
+  const id = event.target.dataset.id
+  console.log('id for confirm is', id)
+  flightAjax.deleteFlight(id)
+    .then(deleteFlightSuccess)
+    .catch(() => $('#delete-modal-alert').text('Sorry, there was an error deleting your flight, Please try again later.'))
 }
 
 module.exports = {
   listFlightsBehavior,
   editFlight,
-  editButtonBehavior
+  editButtonBehavior,
+  deleteButtonBehavior,
+  confirmDeleteBehavior
 }

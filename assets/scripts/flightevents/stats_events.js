@@ -3,11 +3,13 @@ const setStats = function () {
   $('#flight-count').text('')
   $('#site-count').text('')
   $('#hour-sum').text('')
-  flightAPI.getAllFlights().then((data) => {
-    $('#flight-count').text(data.flights.length)
-    $('#hour-sum').text(calculateHours(data))
-    $('#site-count').text()
-  })
+  flightAPI.getAllFlights()
+    .then((data) => {
+      $('#flight-count').text(data.flights.length)
+      $('#hour-sum').text(calculateHours(data))
+      $('#site-count').text()
+    })
+    .catch('#section-alerts').text('Sorry, there was an error retrieving your flight stats. Please try again later.')
 }
 const calculateHours = function (data) {
   const flights = data.flights

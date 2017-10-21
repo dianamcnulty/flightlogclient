@@ -48,16 +48,15 @@ const updateFlightRequest = function (data) {
     data: data
   })
 }
-const deleteFlight = function (data) {
-  const id = parseInt(data['flight']['id'])
-  console.log('id is', id)
-  // return $.ajax({
-  //   url: config.apiOrigin + '/flights/' + id,
-  //   method: 'DELETE',
-  //   headers: {
-  //     Authorization: 'Token token=' + store.user.token
-  //   }
-  // })
+const deleteFlight = function (id) {
+  console.log('id in Ajax is', id)
+  return $.ajax({
+    url: config.apiOrigin + '/flights/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
 }
 module.exports = {
   newFlightRequest,

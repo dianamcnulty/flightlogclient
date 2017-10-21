@@ -11,8 +11,9 @@
     </head>
     <body class="container-fluid">
       <header>
+
         <h1>Flight Log</h1>
-        <a id='logout'name='logout'>Log Out</a>
+        <a id='logout' name='logout' style='float:right;'>Sign Out</a>
       </header>
       <nav id='navbar'>
         <button id='nav-add'>Add a Flight</button>
@@ -43,6 +44,7 @@
         </div>
       </section>
       <h2 id="section-header"></h2>
+      <p id="section-alerts" class='alert'></p>
       <!--  <img id='pg-sketch' src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/master/assets/images/glidersketch.jpg" alt='paraglider-sketch'> -->
 <!-- Add Flights section -->
       <section id='add-flights-view'>
@@ -93,15 +95,16 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="deleteModalLabel">Delete your Flight?</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" class="close nevermind" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <p>Are you sure you want to delete this flight? It will be gone forever!</p>
+              <p id='delete-modal-alert'></p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn navlink" data-dismiss="modal">Nevermind.</button>
+              <button type="button" class="btn navlink nevermind" data-dismiss="modal">Nevermind.</button>
               <button id='confirm-delete' data-id="" type="button" class="btn navlink">Delete it!</button>
             </div>
           </div>
@@ -119,6 +122,5 @@
         <input id='newpass' name="passwords[new]" type="password" placeholder="new password">
         <button type='submit'>Submit</button>
       </form>
-      <h3 class='alert' id='password-message'></h3>
     </body>
 </html>
