@@ -60,7 +60,6 @@ const addFlightsView = function () {
   $('#stats-view').hide()
 }
 const statView = function () {
-  flightStatEvents.setStats()
   $('#stats-view').show()
   $('#password-update').hide()
   $('#pg-sketch').hide()
@@ -68,6 +67,7 @@ const statView = function () {
   $('#flight-table-contents').hide()
   $('#section-header').text('Your Stats')
   $('#section-alerts').text('')
+  flightStatEvents.setStats()
 }
 
 module.exports = {

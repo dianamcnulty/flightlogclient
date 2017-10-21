@@ -9,7 +9,9 @@ const setStats = function () {
       $('#hour-sum').text(calculateHours(data))
       $('#site-count').text()
     })
-    .catch('#section-alerts').text('Sorry, there was an error retrieving your flight stats. Please try again later.')
+    .catch(() => {
+      ('#section-alerts').text('Sorry, there was an error retrieving your flight stats. Please try again later.')
+    })
 }
 const calculateHours = function (data) {
   const flights = data.flights
@@ -17,7 +19,7 @@ const calculateHours = function (data) {
   console.log(data.flights)
   for (let i = 0; i < flights.length; i++) {
     if (flights[i]['duration']) {
-      console.log(flights[i]['duration'])
+      // console.log(flights[i]['duration'])
       total += flights[i]['duration']
     // } else {
     //   console.log('no duration')
