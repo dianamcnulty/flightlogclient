@@ -10,9 +10,9 @@
           <label>Landing Zone:</label> <input class="flight-input" type="text" name="flight[lz]" value='{{flight.lz}}'><br>
           <label>Duration:</label> <input class="flight-input" type="number" step="0.01" name="flight[duration]"  value='{{flight.duration}}' autocomplete="off"><span>hrs.</span>
           <br>
-          <label>Distance:</label> <input class="flight-input" type="number" step="0.01" name="flight[distance]" placeholder='km' value='{{flight.distance}}'><br>
+          <label>Distance:</label> <input class="flight-input" type="number" step="0.01" name="flight[distance]" placeholder='km' value='{{flight.distance}}'><p>km.</p><br>
           <label>Glider:</label> <input class="flight-input" type="text" name="flight[wing]" placeholder="glider" value='{{flight.wing}}' ><br>
           <label>Notes:</label>
           <input class="flight-input" type='text' style='width: 50%;' name="flight[notes]" placeholder="enter notes here..." autocomplete="off" value='{{flight.notes}}'><br>
-          <input type="submit" value='Save Changes'>
+          <input class='navlink' type="submit" value='Save Changes'>
         </form>

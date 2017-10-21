@@ -69,17 +69,17 @@
 
             <div class="modal-content" >
               <div class="modal-header">
-                <h5 class="modal-title" id="modal-label">Update This Flight</h5>
-                <h3 class='alert' id='update-error'></h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
+                <h3 class="modal-title" id="modal-label">Update This Flight</h3>
+                <p class='alert' id='update-error' style='margin-bottom: 0;'></p>
               </div>
               <div class="modal-body" id='edit-flight-content'>
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn" data-dismiss="modal">Close</button>
+              <button type="button" class="btn navlink" style="float: left;" data-dismiss="modal">Cancel</button>
             </div>
             </div>
           </div>
@@ -99,13 +99,13 @@
               <p>Are you sure you want to delete this flight? It will be gone forever!</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn" data-dismiss="modal">Nevermind.</button>
-              <button id='confirm-delete' data-id="" type="button" class="btn">Delete it!</button>
+              <button type="button" class="btn navlink" data-dismiss="modal">Nevermind.</button>
+              <button id='confirm-delete' data-id="" type="button" class="btn navlink">Delete it!</button>
             </div>
           </div>
         </div>
       </div>
-<!-- Stats stuff here -->>
+<!-- Stats stuff here -->
       <section id='stats-view'>
         <h3>Number of Flights:</h3><span id='flight-count'></span>
         <h3>Number of Sites:</h3><span id='site-count'></span>

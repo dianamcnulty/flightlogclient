@@ -10,6 +10,7 @@
       <th>Wing</th>
       <th>Notes</th>
       <th></th>
+      <th></th>
   </thead>
   <tbody
   {{#each flights as |flight|}}
@@ -24,12 +25,12 @@
       <td>{{flight.wing}}</td>
       <td>{{flight.notes}}</td>
       <td >
-        <button data-id="{{flight.id}}" type="button" class="btn edit" data-toggle="modal" data-target="#edit-modal">
+        <button data-id="{{flight.id}}" type="button" class="btn navlink edit" data-toggle="modal" data-target="#edit-modal">
           Edit
         </button>
       </td>
       <td>
-        <button data-id="{{flight.id}}" type="button" class="btn delete" data-toggle="modal" data-target="#delete-modal">
+        <button data-id="{{flight.id}}" type="button" class="btn navlink delete" data-toggle="modal" data-target="#delete-modal">
           Delete
         </button>
         <!-- <button class='delete' data-id="{{flight.id}}">delete</button> -->

@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 50px;
   width: auto;
+  background: $background;
 }
 
 h1 {
@@ -46,8 +47,8 @@ button {
   display:inline-block;
   font-size: 15px;
 }
-button, .navlink {
-  background: $button-gradient;
+button, btn, .navlink {
+  background: -webkit-linear-gradient(top, #897960 0%,#C7BFA3 92%);
   cursor: pointer;
   border: 2px ridge $borders;
   line-height: 1;
@@ -57,6 +58,7 @@ button, .navlink {
   color: $darkest-brown;
   font-family: $big-font;
   font-variant: small-caps;
+  radius: 0;
 }
 
 .buttonlink {
@@ -72,7 +74,7 @@ button, .navlink {
 input {
   font-family: $small-font;
   color: $darkest-brown;
-  background: $field-gradient;
+  background: linear-gradient(to top, #deded1, #c4c2ad);
   margin: 10px;
   font-size: 15px;
   border: ridge 2px white;
@@ -90,9 +92,15 @@ table {
 }
 
 td {
-  border-top: 1px $headers solid;
+  border: 1px $headers solid;
 }
+.modal-content {
+  background: $background;
+  radius: 0%;
+  margin: auto;
+  width: 75%;
 
+}
 .clearfix:after {
   clear: both;
   content: ''; /* Older browser do not support */
