@@ -5,18 +5,19 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const getFlightsSuccess = function (data) {
   console.log(data)
-  const showFlightTable = showFlightsTemplate({ flights: data.flights })
-  $('#flight-table-contents').html(showFlightTable)
-  // $('.edit').on('click', editButtonBehavior)
+  if (data.flights.length < 0) {
+    const showFlightTable = showFlightsTemplate({ flights: data.flights })
+    $('#flight-table-contents').html(showFlightTable)
+  } else {
+    $('#section-alerts').text("Looks like you haven't added any flights yet. If you'd like to add one, just click the 'Add a Flight' button above")
+  }
 }
 
 const listFlightsBehavior = function () {
   // event.preventDefault() // I think this isn't needed
   flightAjax.getAllFlights()
-    .then(getFlightsSuccess, function () {
-      // put the 'catch here' or replace this function with that behavior
-      console.log('flight list failed')
-    })
+    .then(getFlightsSuccess)
+    .catch(() => $('#section-alerts').text('Sorry, we were unable to retrieve your flight data right now. Please try again later.'))
 }
 const editFlightSuccess = function () {
   $('#edit-modal').modal('toggle') // close modal on successful update
