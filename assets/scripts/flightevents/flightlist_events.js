@@ -4,7 +4,10 @@ const flightAjax = require('../API/flightapi')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const getFlightsSuccess = function (data) {
-  console.log(data)
+  console.log(data['flight']['duration'])
+  data['flight']['hrs'] = parseInt(data['flight']['duration'])
+  data['flight']['min'] = (data['flight']['duration'] - data['flight']['hrs']) * 60
+  console.log('this is data before I make the modal')
   const showFlightTable = showFlightsTemplate({ flights: data.flights })
   $('#flight-table-contents').html(showFlightTable)
   $('.edit').on('click', editButtonBehavior)
@@ -21,7 +24,9 @@ const listFlightsBehavior = function () {
 const editFlight = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('sumbitting the update form', data)
+  console.log('what comes back from getFormFields:', data)
+  // console.log(data['flight']['hrs'], data['flight']['duration'])
+  data['flight']['duration'] = (parseInt(data['flight']['hrs']) + parseInt(data['flight']['min']) / 60).toFixed(2)
   flightAjax.updateFlightRequest(data)
     .then(() => { console.log('flight updated') })
 }
