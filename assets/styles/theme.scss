@@ -107,6 +107,7 @@ input, textarea {
   border: ridge 2px white;
   padding: 5px;
 }
+::-webkit-calendar-picker-indicator {
 label {
   width: 100px;
 }
@@ -123,6 +124,7 @@ table {
 
 td {
   border: 1px $headers solid;
+  padding: 5px;
 }
 .modal-content {
   background: $background;
@@ -130,7 +132,9 @@ td {
   margin: auto;
   width: 75%;
 }
-
+.number-box {
+  width: 60px;
+}
 .image-container {
   width: 100%;
   padding-top: 30px;
