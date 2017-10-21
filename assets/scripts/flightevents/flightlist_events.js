@@ -4,8 +4,8 @@ const flightAjax = require('../API/flightapi')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const getFlightsSuccess = function (data) {
-  console.log(data)
-  if (data.flights.length < 0) {
+  console.log(data.flights.length, data)
+  if (data.flights.length > 0) {
     const showFlightTable = showFlightsTemplate({ flights: data.flights })
     $('#flight-table-contents').html(showFlightTable)
   } else {
