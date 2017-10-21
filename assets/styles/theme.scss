@@ -10,9 +10,14 @@ body {
   cursor: default;
   font-family: $small-font;
   margin: 0;
-  padding: 50px;
-  width: auto;
+
+
   background: $background;
+}
+
+.page {
+  padding: 15px 30px;
+  width: auto;
 }
 
 h1 {
@@ -31,16 +36,26 @@ h3 {
   font-weight: normal;
 }
 
+h4 {
+  color: $darkest-brown;
+  font-family:$big-font;
+  font-weight: normal;
+}
 a {
   color: $links;
   cursor: pointer;
+  text-decoration: underline;
   font-variant: small-caps;
 }
 
 a:hover {
   color: $darkest-brown;
 }
-
+.alert {
+  color: #a33900;
+  font-family: $big-font;
+  font-size: 15px;
+}
 button {
   margin: 10px;
   cursor:pointer;
@@ -61,24 +76,39 @@ button, btn, .navlink {
   radius: 0;
 }
 
+hr {
+  border-top: 2px ridge $borders;
+  margin: 0;
+}
+
 .buttonlink {
   color: $darkest-brown;
 }
-
+nav {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 2px ridge $borders;
+}
 .navlink {
   display: inline-block;
-  text-decoration: none;
-  margin: 0;
-
+  margin: 3px auto;
+  width: 150px;
 }
-input {
+
+input, textarea {
   font-family: $small-font;
   color: $darkest-brown;
   background: linear-gradient(to top, #deded1, #c4c2ad);
-  margin: 10px;
+  margin: 5px 10px;
   font-size: 15px;
   border: ridge 2px white;
   padding: 5px;
+}
+label {
+  width: 100px;
 }
 .navlink:hover,
 button:hover {
@@ -99,17 +129,25 @@ td {
   radius: 0%;
   margin: auto;
   width: 75%;
-
 }
+
+.image-container {
+  width: 100%;
+  padding-top: 30px;
+  margin: auto;
+}
+img {
+  width: 100%;
+}
+.highlight {
+  background: $headers;
+  width: auto;
+}
+
 .clearfix:after {
   clear: both;
   content: ''; /* Older browser do not support */
   visibility: hidden;
   display: block;
   height: 0;
-}
-
-.highlight {
-  background: $headers;
-  width: auto;
 }

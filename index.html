@@ -10,16 +10,20 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
+      <div class='page'>
       <header>
-
-        <h1>Flight Log</h1>
-        <a id='logout' name='logout' style='float:right;'>Sign Out</a>
+        <div style='width:100%;' class='clearfix'>
+        <h1 style='float:right;'>Flight Log</h1>
+        <div>
+        <a id='logout' name='logout'>Sign Out</a>
       </header>
+      <hr>
       <nav id='navbar'>
-        <button id='nav-add'>Add a Flight</button>
-        <button id='nav-stats'>See Stats</button>
-        <button id='nav-view'>View All Flights</button>
-        <button id='nav-user'>Profile Options</button>
+        <button class='navlink' id='nav-add'>Add a Flight</button>
+        <button class='navlink' id='nav-stats'>See Stats</button>
+        <button class='navlink' id='nav-view'>View All Flights</button>
+        <button class='navlink' id='nav-user'>Profile Options</button>
+        <hr>
       </nav>
 <!--Auth stuff -->
       <section id='auth'>
@@ -31,7 +35,7 @@
           <input class='login' name="credentials[password]" type="password" placeholder="password">
           <button type='submit'>Log In</button>
         </form>
-        <a id='sign-up-link'>Don't have a username yet? Please Sign Up!</a>
+        <h4 id='sign-up-link'>Don't have a username yet? <a>Please Sign Up!</a><h4>
         <form id='sign-up'>
           <h3>First time here? Pick a username and Password to sign up</h3>
           <input class='login' name="credentials[email]" type='text' placeholder="username">
@@ -45,22 +49,24 @@
       </section>
       <h2 id="section-header"></h2>
       <p id="section-alerts" class='alert'></p>
-      <!--  <img id='pg-sketch' src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/master/assets/images/glidersketch.jpg" alt='paraglider-sketch'> -->
+       <div class='image-container'>
+         <img id='pg-sketch' src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/master/assets/images/glidersketch.jpg" alt='paraglider-sketch'>
+       </div>
 <!-- Add Flights section -->
       <section id='add-flights-view'>
         <form id='new-flight-form' autocomplete="on">
-          Flight Type:<input class="flight-input" type="string" name="flight[flight_type]" placeholder="pg, hg, ppg, etc."><br>
-          Date:<input class="flight-input" type="date" name="flight[date]" autocomplete="off"><br>
-          Time: <input class="flight-input" type="time" name="flight[time]" autocomplete="off"><br>
-          Location: <input class="flight-input" type="text" name="flight[launch]" placeholder="Launch Site"><br>
-          Landing Zone: <input class="flight-input" type="text" name="flight[lz]" placeholder="Landing Zone"><br>
-          Duration: <input class="flight-input" type="number" step="0.1" name="flight[duration]"  placeholder="0.00" autocomplete="off"><p>hrs.</p>
+          <label>Flight Type:</label><input class="flight-input" type="string" name="flight[flight_type]" placeholder="pg, hg, ppg, etc."><br>
+          <label>Date:</label><input class="flight-input" type="date" name="flight[date]" autocomplete="off"><br>
+          <label>Time:</label><input class="flight-input" type="time" name="flight[time]" autocomplete="off"><br>
+          <label>Location:</label><input class="flight-input" type="text" name="flight[launch]" placeholder="Launch Site"><br>
+          <label>Landing Zone:</label><input class="flight-input" type="text" name="flight[lz]" placeholder="Landing Zone"><br>
+          <label>Duration:</label> <input class="flight-input number-box" type="number" step="0.1" name="flight[duration]"  placeholder="0.00" autocomplete="off"><span>hrs.</span>
           <!-- <input name="min" class="flight-input" type="number" min="0" max="60" placeholder="mins" autocomplete="off"> -->
           <br>
-          Distance: <input class="flight-input" type="number"step="0.1" name="flight[distance]"><p>km.</p><br>
-          Glider: <input class="flight-input" type="text" name="flight[wing]" placeholder="Glider"><br>
-          Notes: <br>
-          <textarea class="flight-input" rows="4" cols="50" name="flight[notes]" form="new-flight-form" placeholder="enter notes here..." autocomplete="off"></textarea>
+          <label>Distance:</label> <input class="flight-input number-box" type="number"step="0.1" name="flight[distance]" placeholder="0.00"><span>km.</span><br>
+          <label>Glider:</label> <input class="flight-input" type="text" name="flight[wing]" placeholder="Glider"><br>
+          <label>Notes:</label> <br>
+          <textarea class="flight-input" rows="4" cols="50" name="flight[notes]" form="new-flight-form" placeholder="enter notes here..." autocomplete="off"></textarea><br>
           <button type="submit">Save</button>
         </form>
       </section>
@@ -121,5 +127,6 @@
         <input id='newpass' name="passwords[new]" type="password" placeholder="new password">
         <button type='submit'>Submit</button>
       </form>
+    </div>
     </body>
 </html>
