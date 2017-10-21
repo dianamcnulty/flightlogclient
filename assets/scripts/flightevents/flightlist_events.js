@@ -4,10 +4,6 @@ const flightAjax = require('../API/flightapi')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const getFlightsSuccess = function (data) {
-  console.log(data['flight']['duration'])
-  data['flight']['hrs'] = parseInt(data['flight']['duration'])
-  data['flight']['min'] = (data['flight']['duration'] - data['flight']['hrs']) * 60
-  console.log('this is data before I make the modal')
   const showFlightTable = showFlightsTemplate({ flights: data.flights })
   $('#flight-table-contents').html(showFlightTable)
   $('.edit').on('click', editButtonBehavior)
@@ -26,15 +22,19 @@ const editFlightSuccess = function () {
 const editFlight = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('what comes back from getFormFields:', data)
+  // console.log('what comes back from getFormFields:', data)
   // console.log(data['flight']['hrs'], data['flight']['duration'])
   data['flight']['duration'] = (parseInt(data['flight']['hrs']) + parseInt(data['flight']['min']) / 60).toFixed(2)
+  // console.log('this is data after calculation', data)
   flightAjax.updateFlightRequest(data)
     .then(editFlightSuccess)
     .catch(() => { $('#update-error').text('Sorry, that didn\'t work. Please try again. Please note, Date and time are required.') })
 }
 const getOneFlightSuccess = function (data) {
   console.log('flight success!', data)
+  data['flight']['hrs'] = parseInt(data['flight']['duration'])
+  data['flight']['min'] = parseInt(((data['flight']['duration']) - (data['flight']['hrs'])) * 60)
+  console.log('this is data after calculation', data)
   const editFlightModal = editFlightTemplate({ flight: data.flight })
   $('#edit-flight-content').html(editFlightModal)
 }
