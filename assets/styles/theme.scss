@@ -1,0 +1,107 @@
+@import './colors';
+@import './fonts';
+
+html {
+  background: $background;
+}
+
+body {
+  color: $darkest-brown;
+  cursor: default;
+  font-family: $small-font;
+  margin: 0;
+  padding: 50px;
+  width: auto;
+}
+
+h1 {
+  color: $headers;
+  font-family: $big-font;
+  font-size: 50px;
+  font-variant: small-caps;
+  font-weight: normal;
+}
+
+h2,
+h3 {
+  color: $darkest-brown;
+  font-family:$big-font;
+  font-variant: small-caps;
+  font-weight: normal;
+}
+
+a {
+  color: $links;
+  cursor: pointer;
+  font-variant: small-caps;
+}
+
+a:hover {
+  color: $darkest-brown;
+}
+
+button {
+  margin: 10px;
+  cursor:pointer;
+  display:inline-block;
+  font-size: 15px;
+}
+button, .navlink {
+  background: $button-gradient;
+  cursor: pointer;
+  border: 2px ridge $borders;
+  line-height: 1;
+  text-align: center;
+  outline: 0;
+  padding: 10px;
+  color: $darkest-brown;
+  font-family: $big-font;
+  font-variant: small-caps;
+}
+
+.buttonlink {
+  color: $darkest-brown;
+}
+
+.navlink {
+  display: inline-block;
+  text-decoration: none;
+  margin: 0;
+
+}
+input {
+  font-family: $small-font;
+  color: $darkest-brown;
+  background: $field-gradient;
+  margin: 10px;
+  font-size: 15px;
+  border: ridge 2px white;
+  padding: 5px;
+}
+.navlink:hover,
+button:hover {
+  color: $links;
+}
+table {
+  background: $table-background;
+  color: $darkest-brown;
+  text-align: left;
+  border: 2px  ridge $borders;
+}
+
+td {
+  border-top: 1px $headers solid;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ''; /* Older browser do not support */
+  visibility: hidden;
+  display: block;
+  height: 0;
+}
+
+.highlight {
+  background: $headers;
+  width: auto;
+}

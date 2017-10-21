@@ -1,15 +1,3 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-body{
-  margin: auto;
-  text-align: center;
-}
-img{
-  clear: both;
-  margin: 35px;
-  width: 75%;
-}
-td{
-  border: 1px solid black;
-  padding: 5px;
-}
+@import './theme';
