@@ -22,10 +22,7 @@ const editFlightSuccess = function () {
 const editFlight = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  // console.log('what comes back from getFormFields:', data)
-  // console.log(data['flight']['hrs'], data['flight']['duration'])
   data['flight']['duration'] = (parseInt(data['flight']['hrs']) + parseInt(data['flight']['min']) / 60).toFixed(2)
-  // console.log('this is data after calculation', data)
   flightAjax.updateFlightRequest(data)
     .then(editFlightSuccess)
     .catch(() => { $('#update-error').text('Sorry, that didn\'t work. Please try again. Please note, Date and time are required.') })
