@@ -9,9 +9,9 @@ const newFlightSuccess = function (response) {
 const newFlightFailure = function (err) {
   console.log('failure was triggered', err)
   $('#section-header').text('Add a Flight')
-  $('#flight-error').hide()
-  $('#flight-error').text("Uh...Oooooohhh... That flight didn't save. Please check your fields and try again. Date and Time are required.")
-  $('#flight-error').fadeIn(200)
+  $('#section-alerts').hide()
+  $('#section-alerts').text("Uh...Oooooohhh... That flight didn't save. Please check your fields and try again. Date and Time are required.")
+  $('#section-alerts').fadeIn(200)
 }
 module.exports = {
   newFlightSuccess,

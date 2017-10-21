@@ -37,8 +37,9 @@ const clickHandlers = function () {
   $('#logout').on('click', logOutBehavior)
   $('#password-update').on('submit', passwordBehavior)
   $('#sign-up-link').on('click', () => {
-    $('#sign-up').show()
     $('#sign-up-link').hide()
+    $('#auth-error').hide('')
+    $('#sign-up').show()
   })
 }
 module.exports = {
