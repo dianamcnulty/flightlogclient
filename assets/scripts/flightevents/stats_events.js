@@ -20,12 +20,14 @@ const calculateHours = function (data) {
   for (let i = 0; i < flights.length; i++) {
     if (flights[i]['duration']) {
       // console.log(flights[i]['duration'])
-      total += flights[i]['duration']
+      total += parseFloat(flights[i]['duration'])
     // } else {
     //   console.log('no duration')
     }
   }
-  return total
+  const hrs = parseInt(total)
+  const min = parseInt((total - hrs) * 60)
+  return (hrs + ' hrs. , ' + min + ' mins.')
 }
 
 const calculateSites = function (data) {
