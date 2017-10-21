@@ -32,15 +32,15 @@ const logOutSuccess = function (data) {
 }
 const passwordSuccess = function (data) {
   // console.log('password changed successfully')
-  $('#password-message').text('Your password has beeen updated. Please use your new password next time you log in.')
+  $('#section-alerts').text('Your password has beeen updated. Please use your new password next time you log in.')
   $('#password-update').hide()
   $('#oldpass').val('')
   $('#newpass').val('')
 }
 const passwordFail = function () {
-  $('#password-message').text('uh oh... your password update didn\'t process. Please Try again')
-  $('#password-message').hide()
-  $('#password-message').fadeIn(200)
+  $('#section-alerts').text('uh oh... your password update didn\'t process. Please Try again')
+  $('#section-alerts').hide()
+  $('#section-alerts').fadeIn(200)
 }
 module.exports = {
   signUpSuccess,

@@ -10,26 +10,32 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
+      <div class='page'>
       <header>
-        <h1>Flight Log</h1>
-        <a id='logout'name='logout'>Log Out</a>
+        <div style='width:100%;' class='clearfix'>
+        <h1 style='float:right;'>Flight Log</h1>
+        <div>
+        <a id='logout' name='logout'>Sign Out</a>
       </header>
+      <hr>
       <nav id='navbar'>
-        <button id='nav-add'>Add a Flight</button>
-        <button id='nav-stats'>See Stats</button>
-        <button id='nav-view'>View All Flights</button>
-        <button id='nav-user'>Profile Options</button>
+        <button class='navlink' id='nav-add'>Add a Flight</button>
+        <button class='navlink' id='nav-stats'>See Stats</button>
+        <button class='navlink' id='nav-view'>View All Flights</button>
+        <button class='navlink' id='nav-user'>Profile Options</button>
+        <hr>
       </nav>
+<!--Auth stuff -->
       <section id='auth'>
         <!--log in forms-->
         <h3 id='signupmessage'></h3>
         <form id='log-in'>
-          <h3 id='loginmessage'>Already have a login ID? Go ahead and log in!</h3>
+          <h3 id='loginmessage'>Log in to your Log book</h3>
           <input class='login' name="credentials[email]" type='text' placeholder="username">
           <input class='login' name="credentials[password]" type="password" placeholder="password">
           <button type='submit'>Log In</button>
         </form>
-        <a id='sign-up-link'>First Visit? Please Sign Up!</a>
+        <h4 id='sign-up-link'>Don't have a username yet? <a>Please Sign Up!</a><h4>
         <form id='sign-up'>
           <h3>First time here? Pick a username and Password to sign up</h3>
           <input class='login' name="credentials[email]" type='text' placeholder="username">
@@ -38,55 +44,83 @@
           <button type='submit'>Sign Up</button>
         </form>
         <div class='alert' id='auth-error'>
-          <h3>Sorry, that didn't work. Please try again</h3>
+          <p>Sorry, that didn't work. Please try again</p>
         </div>
       </section>
       <h2 id="section-header"></h2>
-      <!--  <img id='pg-sketch' src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/master/assets/images/glidersketch.jpg" alt='paraglider-sketch'> -->
+      <p id="section-alerts" class='alert'></p>
+       <div class='image-container'>
+         <img id='pg-sketch' src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/master/assets/images/glidersketch.jpg" alt='paraglider-sketch'>
+       </div>
+<!-- Add Flights section -->
       <section id='add-flights-view'>
         <form id='new-flight-form' autocomplete="on">
-          Flight Type:<input class="flight-input" type="string" name="flight[flight_type]" placeholder="pg, hg, ppg, etc."><br>
-          Date:<input class="flight-input" type="date" name="flight[date]" autocomplete="off"><br>
-          Time: <input class="flight-input" type="time" name="flight[time]" autocomplete="off"><br>
-          Location: <input class="flight-input" type="text" name="flight[launch]" placeholder="Launch Site"><br>
-          Landing Zone: <input class="flight-input" type="text" name="flight[lz]" placeholder="Landing Zone"><br>
-          Duration: <input class="flight-input" type="number" step="0.1" name="flight[duration]"  placeholder="0.00" autocomplete="off">hrs.
+          <label>Flight Type:</label><input class="flight-input" type="string" name="flight[flight_type]" placeholder="pg, hg, ppg, etc."><br>
+          <label>Date:</label><input class="flight-input" type="date" name="flight[date]" autocomplete="off"><br>
+          <label>Time:</label><input class="flight-input" type="time" name="flight[time]" autocomplete="off"><br>
+          <label>Location:</label><input class="flight-input" type="text" name="flight[launch]" placeholder="Launch Site"><br>
+          <label>Landing Zone:</label><input class="flight-input" type="text" name="flight[lz]" placeholder="Landing Zone"><br>
+          <label>Duration:</label> <input class="flight-input number-box" type="number" name="flight[hrs]"  placeholder="0" autocomplete="off"><span>hrs.</span>
+          <input class="flight-input number-box" type="number" name="flight[min]"  placeholder="0" autocomplete="off"><span>mins.</span>
           <!-- <input name="min" class="flight-input" type="number" min="0" max="60" placeholder="mins" autocomplete="off"> -->
           <br>
-          Distance: <input class="flight-input" type="number"step="0.1" name="flight[distance]" placeholder="km"><br>
-          Glider: <input class="flight-input" type="text" name="flight[wing]" placeholder="Glider"><br>
-          Notes: <br>
-          <textarea class="flight-input" rows="4" cols="50" name="flight[notes]" form="new-flight-form" placeholder="enter notes here..." autocomplete="off"></textarea>
+          <label>Distance:</label> <input class="flight-input number-box" type="number"step="0.1" name="flight[distance]" placeholder="0.00"><span>km.</span><br>
+          <label>Glider:</label> <input class="flight-input" type="text" name="flight[wing]" placeholder="Glider"><br>
+          <label>Notes:</label> <br>
+          <textarea class="flight-input" rows="4" cols="50" name="flight[notes]" form="new-flight-form" placeholder="enter notes here..." autocomplete="off"></textarea><br>
           <button type="submit">Save</button>
         </form>
-        <h3 id='flight-error' class='alert'></h3>
       </section>
       <div id='flight-table-contents'></div>
+<!-- modal for edit flight -->
       <div>
-        <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
 
             <div class="modal-content" >
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Update This Flight</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
+                <h3 class="modal-title" id="modal-label">Update This Flight</h3>
+                <p class='alert' id='update-error' style='margin-bottom: 0;'></p>
               </div>
               <div class="modal-body" id='edit-flight-content'>
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn" data-dismiss="modal">Close</button>
+              <button type="button" class="btn navlink" style="float: left;" data-dismiss="modal">Cancel</button>
             </div>
             </div>
           </div>
         </div>
       </div>
+<!--  delete modal here -->
+      <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">Delete your Flight?</h5>
+              <button type="button" class="close nevermind" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to delete this flight? It will be gone forever!</p>
+              <p id='delete-modal-alert'></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn navlink nevermind" data-dismiss="modal">Nevermind.</button>
+              <button id='confirm-delete' data-id="" type="button" class="btn navlink">Delete it!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Stats stuff here -->
       <section id='stats-view'>
         <h3>Number of Flights:</h3><span id='flight-count'></span>
-        <h3>Number of Sites:</h3><span id='site-count'></span>
         <h3>Flight Hours:</h3><span id='hour-sum'></span>
+        <h3>Number of Sites Flown:</h3><span id='site-count'></span>
       </section>
       <form id='password-update'>
         <p>To update your password, please enter your current password, then your new password and click "submit"</p>
@@ -94,6 +128,6 @@
         <input id='newpass' name="passwords[new]" type="password" placeholder="new password">
         <button type='submit'>Submit</button>
       </form>
-      <h3 class='alert' id='password-message'></h3>
+    </div>
     </body>
 </html>
