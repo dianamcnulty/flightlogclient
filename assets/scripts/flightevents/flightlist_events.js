@@ -38,6 +38,7 @@ const getOneFlightSuccess = function (data) {
 
 const editButtonBehavior = function () {
   console.log('clicked edit', event.target.dataset.id)
+  $('#section-alerts').text('')
   const id = event.target.dataset.id
   // event.target.dataset.id === id of the flight
   flightAjax.getOneFlight(id)
