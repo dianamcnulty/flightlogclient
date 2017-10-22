@@ -5,12 +5,15 @@ Certain stats are also displayed for the user, such as the number of flights the
 The app requires authentication. Users are only allowed to view their own flights.
 
 ## related links
-Deployed site (front-end):
-Deployed API:
+Deployed client site (front-end): https://dianamcnulty.github.io/flightlogclient/
+Deployed API: https://pgflightlog.herokuapp.com/
+
 
 Repositories:
-Client Github repository:
-APIGithub repository:
+Client Github repository: https://github.com/dianamcnulty/flightlogclient
+API Github repository:https://github.com/dianamcnulty/flightlogAPI
+heroku repo: https://dashboard.heroku.com/apps/pgflightlog
+
 
 ## client technologies
 - Bootstrap
