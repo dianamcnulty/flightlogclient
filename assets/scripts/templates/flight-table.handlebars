@@ -1,41 +1,36 @@
 <table>
   <thead class='table-header'>
-      <th>Flight Type</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>kms.</th>
-      <th>hrs.</th>
-      <th>Launch Location</th>
-      <th>Landing Location</th>
-      <th>Wing</th>
-      <th>Notes</th>
-      <th></th>
-      <th></th>
+      <th class='hide-mobile'>Flight Type</th>
+      <th class='show-mobile'>Date</th>
+      <th class='show-mobile'>Time</th>
+      <th class='hide-mobile'>kms.</th>
+      <th class='show-mobile'>hrs.</th>
+      <th class='show-mobile'>Launch Location</th>
+      <th class='hide-mobile'>Landing Location</th>
+      <th class='hide-mobile'>Wing</th>
   </thead>
-  <tbody
+  <tbody>
   {{#each flights as |flight|}}
-    <tr data-id="{{flight.id}}">
-      <td>{{flight.flight_type}}</td>
-      <td>{{flight.date}}</td>
-      <td>{{flight.time}}</td>
-      <td>{{flight.distance}}</td>
-      <td>{{flight.duration}}</td>
-      <td>{{flight.launch}}</td>
-      <td>{{flight.lz}}</td>
-      <td>{{flight.wing}}</td>
-      <td>{{flight.notes}}</td>
-      <td >
-        <button data-id="{{flight.id}}" type="button" class="btn navlink edit" data-toggle="modal" data-target="#edit-modal">
-          Edit
-        </button>
+    <tr>
+      <td class='hide-mobile'>{{flight.flight_type}}</td>
+      <td class='show-mobile'>{{flight.date}}</td>
+      <td class='show-mobile'>{{flight.time}}</td>
+      <td class='hide-mobile'>{{flight.distance}}</td>
+      <td class='show-mobile'>{{flight.duration}}</td>
+      <td class='show-mobile'>{{flight.launch}}</td>
+      <td class='hide-mobile'>{{flight.lz}}</td>
+      <td class='hide-mobile'>{{flight.wing}}</td>
+    </tr>
+    <tr>
+      <td class='hide-mobile' colspan="6" class='note-cell'> <label> Notes:</label>  {{flight.notes}}</td>
+      <td class='button-cell'>
+        <button data-id="{{flight.id}}" type="button" class="table-button btn edit" data-toggle="modal" data-target="#edit-modal">Edit</button>
       </td>
-      <td>
-        <button data-id="{{flight.id}}" type="button" class="btn navlink delete" data-toggle="modal" data-target="#delete-modal">
-          Delete
-        </button>
-        <!-- <button class='delete' data-id="{{flight.id}}">delete</button> -->
+      <td class='button-cell'>
+        <button data-id="{{flight.id}}" type="button" class="table-button btn delete" data-toggle="modal" data-target="#delete-modal">Delete</button>
       </td>
     </tr>
-    {{/each}}
+        {{/each}}
+  </table>
   </tbody>
 </table>

@@ -10,8 +10,6 @@ body {
   cursor: default;
   font-family: $small-font;
   margin: 0;
-
-
   background: $background;
 }
 
@@ -55,6 +53,7 @@ a:hover {
   color: #a33900;
   font-family: $big-font;
   font-size: 15px;
+  margin: 0;
 }
 button {
   margin: 10px;
@@ -115,15 +114,23 @@ button:hover {
   color: $links;
 }
 table {
-  background: $table-background;
+
   color: $darkest-brown;
   text-align: left;
   border: 2px  ridge $borders;
+  margin: auto;
 }
 
-td {
+td, th{
+  background: $table-background;
   border: 1px $headers solid;
   padding: 5px;
+}
+th {
+  border-bottom: 2px  ridge $borders;
+}
+span, p{
+  font-size: 20px
 }
 .modal-content {
   background: $background;
@@ -136,21 +143,73 @@ td {
 }
 .image-container {
   width: 100%;
-  padding-top: 30px;
   margin: auto;
 }
 img {
+  padding-top: 30px;
   width: 100%;
 }
 .highlight {
   background: $headers;
   width: auto;
 }
+.button-cell {
+  width: 60px;
+  border-left: hidden;
+}
 
+.note-cell, .button-cell {
+  border-bottom: 2px ridge $borders;
+}
+.table-button {
+  background: -webkit-linear-gradient(top, #897960 0%,#C7BFA3 92%);
+  border: 2px ridge $borders;
+  width: 60px;
+  padding: 4px;
+  margin: 0;
+}
+.stat-label {
+  color: $headers;
+  display: inline;
+}
 .clearfix:after {
   clear: both;
   content: ''; /* Older browser do not support */
   visibility: hidden;
   display: block;
   height: 0;
+}
+@media screen and (max-width: 550px) {
+  .hide-mobile{
+    display: none;
+  }
+  .button-cell{
+    border-right: hidden;
+    width:auto;
+    background: $background
+  }
+  .show-mobile{
+    border-top: 2px ridge $borders;
+  }
+  .flight-table{
+    margin: auto;
+  }
+  .flight-input {
+    display: block;
+  }
+}
+@media screen and (min-width: 850px) {
+  body {
+    background: rgba(222, 222, 210, 0.0);
+    padding: 15px 75px;
+  }
+  img {
+    position: absolute;
+    top: 140px;
+    right:0;
+    z-index: -1;
+  }
+  .navlink {
+    width: 300px;
+  }
 }

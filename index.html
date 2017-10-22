@@ -53,7 +53,7 @@
          <img id='pg-sketch' src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/master/assets/images/glidersketch.jpg" alt='paraglider-sketch'>
        </div>
 <!-- Add Flights section -->
-      <section id='add-flights-view'>
+      <section id='add-flights-view' class='page'>
         <form id='new-flight-form' autocomplete="on">
           <label>Flight Type:</label><input class="flight-input" type="string" name="flight[flight_type]" placeholder="pg, hg, ppg, etc."><br>
           <label>Date:</label><input class="flight-input" type="date" name="flight[date]" autocomplete="off"><br>
@@ -71,7 +71,10 @@
           <button type="submit">Save</button>
         </form>
       </section>
-      <div id='flight-table-contents'></div>
+<!-- flight-table stuff here -->
+      <section class='flight-table'>
+        <div id='flight-table-contents' class='flight-table'></div>
+      </section>
 <!-- modal for edit flight -->
       <div>
         <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -118,9 +121,11 @@
       </div>
 <!-- Stats stuff here -->
       <section id='stats-view'>
-        <h3>Number of Flights:</h3><span id='flight-count'></span>
-        <h3>Flight Hours:</h3><span id='hour-sum'></span>
-        <h3>Number of Sites Flown:</h3><span id='site-count'></span>
+        <h3 class='stat-label'>Number of Flights:</h3><span id='flight-count'></span>
+        <br>
+        <h3 class='stat-label'>Total Flight Hours:</h3><span id='hour-sum'></span>
+        <br><h3 class='stat-label'>Number of Sites Flown:</h3><span id='site-count'></span>
+        <br>
       </section>
       <form id='password-update'>
         <p>To update your password, please enter your current password, then your new password and click "submit"</p>

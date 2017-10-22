@@ -5,9 +5,9 @@ const setStats = function () {
   $('#hour-sum').text('')
   flightAPI.getAllFlights()
     .then((data) => {
-      $('#flight-count').text(data.flights.length)
-      $('#hour-sum').text(calculateHours(data))
-      $('#site-count').text(calculateSites(data))
+      $('#flight-count').text(' ' + data.flights.length)
+      $('#hour-sum').text(' ' + calculateHours(data))
+      $('#site-count').text(' ' + calculateSites(data))
     })
     .catch(() => {
       $('#section-alerts').text('Sorry, there was an error retrieving your flight stats. Please try again later.')
