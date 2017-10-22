@@ -8,6 +8,8 @@ const setStats = function () {
       $('#flight-count').text(' ' + data.flights.length)
       $('#hour-sum').text(' ' + calculateHours(data))
       $('#site-count').text(' ' + calculateSites(data))
+      farthestFlight(data)
+      longestFlight(data)
     })
     .catch(() => {
       $('#section-alerts').text('Sorry, there was an error retrieving your flight stats. Please try again later.')
@@ -47,6 +49,38 @@ const calculateSites = function (data) {
   return totalSites
 }
 
+const farthestFlight = function (data) {
+  const flights = data.flights
+  let farFlight = flights[0]
+  for (let i = 1; i < flights.length; i++) {
+    if (flights[i]['distance'] > farFlight['distance']) {
+      farFlight = flights[i]
+    }
+  }
+  $('#most-km').text('  ' + farFlight['distance'] + ' kms.')
+  $('#farthest-date').text(farFlight['date'])
+  if (farFlight['launch']) {
+    $('#farthest-location').text(farFlight['launch'])
+  } else {
+    $('#farthest-location').text('not specified')
+  }
+}
+const longestFlight = function (data) {
+  const flights = data.flights
+  let longFlight = flights[0]
+  for (let i = 1; i < flights.length; i++) {
+    if (flights[i]['duration'] > longFlight['duration']) {
+      longFlight = flights[i]
+    }
+  }
+  $('#most-hrs').text('  ' + longFlight['duration'] + ' hours')
+  $('#longest-date').text(longFlight['date'])
+  if (longFlight['launch']) {
+    $('#longest-location').text(longFlight['launch'])
+  } else {
+    $('#longest-location').text('not specified')
+  }
+}
 module.exports = {
   setStats
 }
