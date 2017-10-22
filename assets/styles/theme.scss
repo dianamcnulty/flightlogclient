@@ -107,7 +107,7 @@ input, textarea {
   padding: 5px;
 }
 label {
-  width: 100px;
+  width: 200px;
   font-size: 20px;
 }
 .navlink:hover,
@@ -159,7 +159,6 @@ img {
   width: 60px;
   border-left: hidden;
 }
-
 .note-cell, .button-cell {
   border-bottom: 2px ridge $borders;
 }
@@ -198,6 +197,9 @@ img {
   }
   .flight-input {
     display: block;
+  }
+  .edit-note {
+    width: 80%;
   }
 }
 @media screen and (min-width: 850px) {

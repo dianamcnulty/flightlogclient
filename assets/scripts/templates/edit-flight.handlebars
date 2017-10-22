@@ -1,6 +1,6 @@
 
 
-<form autocomplete="on" id='flight-update-form'>
+<form autocomplete="on" id='flight-update-form' class='update-form'>
   <input type="hidden" name='flight[id]' value='{{flight.id}}'>
   <label>Flight Type:</label>
   <input class="flight-input" type="text" name="flight[flight_type]"  value='{{flight.flight_type}}'><br>
@@ -14,6 +14,6 @@
   <label>Distance:</label> <input class="flight-input" type="number" step="0.01" name="flight[distance]" placeholder='km' value='{{flight.distance}}'><br>
   <label>Glider:</label> <input class="flight-input" type="text" name="flight[wing]" placeholder="glider" value='{{flight.wing}}' ><br>
   <label>Notes:</label>
-  <input class="flight-input" type='text' style='width: 50%;' name="flight[notes]" placeholder="enter notes here..." autocomplete="off" value='{{flight.notes}}'><br>
-  <input type="submit" value='Save Changes'>
+  <input class="flight-input edit-note" type='text' style='width: 50%;' name="flight[notes]" placeholder="enter notes here..." autocomplete="off" value='{{flight.notes}}'><br>
+  <input type="submit" class='navlink' value='Save Changes'>
 </form>
