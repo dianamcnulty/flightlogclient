@@ -4,9 +4,13 @@ const flightAjax = require('../API/flightapi')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const getFlightsSuccess = function (data) {
-  const showFlightTable = showFlightsTemplate({ flights: data.flights })
-  $('#flight-table-contents').html(showFlightTable)
-  $('.edit').on('click', editButtonBehavior)
+  console.log(data.flights.length, data)
+  if (data.flights.length > 0) {
+    const showFlightTable = showFlightsTemplate({ flights: data.flights })
+    $('#flight-table-contents').html(showFlightTable)
+  } else {
+    $('#section-alerts').text("Looks like you haven't added any flights yet. If you'd like to add one, just click the 'Add a Flight' button above")
+  }
 }
 
 const listFlightsBehavior = function () {
