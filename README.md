@@ -35,7 +35,7 @@ Usability issues:
 Potential enhancements (Luxury edition)
 - Eventually, I could add the ability for pilots to upload their previous flight data via a CSV file.
 - Store GPS tracks as well.
-- Add ability to track time spent on each wing, and display the wing input field as a dropdown to prevent multiple versions of the same wing.
+- Add ability for users to manage their wings, and display the wing input field as a dropdown to prevent multiple versions of the same wing.
 - Ability to filter the flight list (i.e. current year only, etc.)
 
 ## Development process
