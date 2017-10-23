@@ -51,7 +51,7 @@ a:hover {
 }
 .alert {
   color: #a33900;
-  font-family: $big-font;
+  font-family: $small-font;
   font-size: 15px;
   margin: 0;
 }
@@ -108,7 +108,9 @@ input, textarea {
 }
 label {
   width: 150px;
+  font-family: $big-font;
   font-size: 20px;
+
 }
 .navlink:hover,
 button:hover {
@@ -172,9 +174,10 @@ img {
 .stat-label {
   color: $headers;
   display: inline;
+  padding-right: 5px;
 }
 .table-label {
-  width: 90px;
+  width: 60px;
   font-size: 15px;
 }
 .clearfix:after {

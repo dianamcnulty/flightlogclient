@@ -15,7 +15,7 @@
         <div style='width:100%;' class='clearfix'>
         <h1 style='float:right;'>Flight Log</h1>
         <div>
-        <a id='logout' name='logout'>Sign Out</a>
+        <h4><a id='logout' name='logout'>Sign Out</a></h4>
       </header>
       <hr>
       <nav id='navbar'>
@@ -102,7 +102,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="deleteModalLabel">Delete your Flight?</h5>
+              <h3 class="modal-title" id="deleteModalLabel">Delete your Flight?</h3>
               <button type="button" class="close nevermind" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -120,20 +120,24 @@
       </div>
 <!-- Stats stuff here -->
       <section id='stats-view'>
-        <h3 class='stat-label'>Number of Flights:</h3><span id='flight-count' class='input-desc'></span>
-        <br>
-        <h3 class='stat-label'>Total Flight Hours:</h3><span id='hour-sum' class='input-desc'></span>
-        <br><h3 class='stat-label'>Number of Sites Flown:</h3><span id='site-count' class='input-desc'></span>
+        <div>
+          <h3 class='stat-label'>Number of Flights:</h3><span id='flight-count' class='input-desc'></span>
+          <br>
+          <h3 class='stat-label'>Total Flight Hours:</h3><span id='hour-sum' class='input-desc'></span>
+          <br><h3 class='stat-label'>Number of Sites Flown:</h3><span id='site-count' class='input-desc'></span>
+        </div>
         <br>
         <br>
         <section class='page highlight'>
           <h3>Your Record Best</h3>
-          <h4 class='stat-label'>Farthest Flight: </h4><span id='most-km' ></span><br>
+          <h3 class='stat-label' style='width:200;'>Farthest Flight: </h3><span id='most-km' ></span><br>
           <label>Date: </label><span id='farthest-date'></span><br>
           <label>Location: </label><span id='farthest-location'></span><br><br>
-          <h4 class='stat-label'>Longest Flight: </h4><span id='most-hrs'></span><br>
+          <h3 class='stat-label'>Longest Flight: </h3><span id='most-hrs'></span><br>
           <label>Date: </label><span id='longest-date'></span><br>
           <label>Location: </label><span id='longest-location'></span><br>
+        </section>
+        <section class='gliders' id='glider-stat-content'>
         </section>
       </section>
       <form id='password-update'>

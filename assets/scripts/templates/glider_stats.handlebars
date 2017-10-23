@@ -1,0 +1,8 @@
+<h3>Your Glider History</h3>
+<section style='margin: 0 15px;'>
+<p style='font-style: italic;'> hours spent on each wing</p>
+<br>
+{{#each wings as |wing|}}
+<h4 class='stat-label'>{{wing.glider}}: </h4><span>{{wing.duration}} hrs.</span><br>
+{{/each}}
+</section>

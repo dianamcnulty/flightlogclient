@@ -1,4 +1,5 @@
 const flightAPI = require('../API/flightapi')
+const gliderTemplate = require('../templates/glider_stats.handlebars')
 const setStats = function () {
   $('#flight-count').text('')
   $('#site-count').text('')
@@ -10,6 +11,10 @@ const setStats = function () {
       $('#site-count').text(' ' + calculateSites(data))
       farthestFlight(data)
       longestFlight(data)
+      const gliders = gliderStats(data)
+      console.log('passing this into template', gliders)
+      const showGliderStats = gliderTemplate({ wings: gliders.wings })
+      $('#glider-stat-content').html(showGliderStats)
     })
     .catch(() => {
       $('#section-alerts').text('Sorry, there was an error retrieving your flight stats. Please try again later.')
@@ -81,6 +86,28 @@ const longestFlight = function (data) {
     $('#longest-location').text('not specified')
   }
 }
+const gliderStats = function (data) {
+  const flights = data.flights
+  const gliders = {}
+  const gliderArray = []
+  const gliderData = {wings: gliderArray}
+  for (let i = 0; i < flights.length; i++) {
+    const currentWing = flights[i]['wing']
+    if ((currentWing !== null) && (currentWing !== '')) {
+      if (gliders[currentWing]) {
+        gliders[currentWing] += flights[i]['duration']
+      } else {
+        gliders[currentWing] = flights[i]['duration']
+      }
+    }
+  }
+  for (const x in gliders) {
+    gliderArray.push({'glider': x, 'duration': gliders[x]})
+  }
+  console.log('gliders data is', gliderData)
+  return gliderData
+}
+
 module.exports = {
   setStats
 }
