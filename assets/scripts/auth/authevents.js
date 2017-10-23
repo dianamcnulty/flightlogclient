@@ -12,18 +12,15 @@ const signUpBehavior = function (event) {
 const logInBehavior = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('I clicked the login button', this)
   api.logIn(data)
     .then(authui.logInSuccess)
     .catch(authui.logInFail)
 }
 const logOutBehavior = function () {
-  console.log('I clicked logout')
   api.logOut()
     .then(authui.logOutSuccess)
     .catch(() => $('#password.message').text('Whoops, there was an error logging out. Please try that again.'))
 }
-
 const passwordBehavior = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
@@ -38,7 +35,7 @@ const clickHandlers = function () {
   $('#password-update').on('submit', passwordBehavior)
   $('#sign-up-link').on('click', () => {
     $('#sign-up-link').hide()
-    $('#auth-error').hide('')
+    $('#auth-error').hide()
     $('#sign-up').show()
   })
 }
