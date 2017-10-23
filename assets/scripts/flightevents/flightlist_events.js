@@ -21,6 +21,7 @@ const listFlightsBehavior = function () {
 }
 const editFlightSuccess = function () {
   $('#edit-modal').modal('toggle') // close modal on successful update
+  $('#section-alerts').text('Your flight was updated successfully')
   listFlightsBehavior() // refreshes the flight list.
 }
 const editFlight = function (event) {
@@ -58,6 +59,7 @@ const deleteButtonBehavior = function (event) {
 const deleteFlightSuccess = function () {
   $('#delete-modal').modal('toggle') // close modal on successful update
   listFlightsBehavior() // refreshes the flight list.
+  $('#section-alerts').text('')
   $('#section-alerts').text('Your flight was successfully deleted')
   $('#delete-modal-alert').text('')
 }

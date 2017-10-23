@@ -60,10 +60,10 @@
           <label>Time:</label><input class="flight-input" type="time" name="flight[time]" autocomplete="off"><br>
           <label>Location:</label><input class="flight-input" type="text" name="flight[launch]" placeholder="Launch Site"><br>
           <label>Landing Zone:</label><input class="flight-input" type="text" name="flight[lz]" placeholder="Landing Zone"><br>
-          <label>Duration:</label> <span class='input-desc'>hrs.</span><input class="flight-input number-box" type="number" name="flight[hrs]"  placeholder="0" autocomplete="off">
-          <span>mins.</span><input class="flight-input number-box" type="number" name="flight[min]"  placeholder="0" autocomplete="off">
+          <label>Duration:</label> <span class='input-desc'>hrs.</span><input class="flight-input number-box" type="number" min='0' name="flight[hrs]"  placeholder="0" autocomplete="off">
+          <span>mins.</span><input class="flight-input number-box" type="number" min='0' name="flight[min]"  placeholder="0" autocomplete="off">
           <br>
-          <label>Distance:</label> <span class='input-desc'>kms.</span> <input class="flight-input number-box" type="number"step="0.1" name="flight[distance]" placeholder="0.00"><br>
+          <label>Distance:</label> <span class='input-desc'>kms.</span> <input class="flight-input number-box" type="number"step="0.1" min='0' name="flight[distance]" placeholder="0.00"><br>
           <label>Glider:</label> <input class="flight-input" type="text" name="flight[wing]" placeholder="Glider"><br>
           <label>Notes:</label> <br>
           <textarea class="flight-input edit-note" rows="4" cols="50" name="flight[notes]" form="new-flight-form" placeholder="enter notes here..." autocomplete="off"></textarea><br>
