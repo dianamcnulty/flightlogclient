@@ -4,9 +4,12 @@ const flightAjax = require('../API/flightapi')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const getFlightsSuccess = function (data) {
-  const showFlightTable = showFlightsTemplate({ flights: data.flights })
-  $('#flight-table-contents').html(showFlightTable)
-  $('.edit').on('click', editButtonBehavior)
+  if (data.flights.length > 0) {
+    const showFlightTable = showFlightsTemplate({ flights: data.flights })
+    $('#flight-table-contents').html(showFlightTable)
+  } else {
+    $('#section-alerts').text("Looks like you haven't added any flights yet. If you'd like to add one, just click the 'Add a Flight' button above")
+  }
 }
 
 const listFlightsBehavior = function () {
@@ -17,6 +20,7 @@ const listFlightsBehavior = function () {
 }
 const editFlightSuccess = function () {
   $('#edit-modal').modal('toggle') // close modal on successful update
+  $('#section-alerts').text('Your flight was updated successfully')
   listFlightsBehavior() // refreshes the flight list.
 }
 const editFlight = function (event) {
@@ -28,16 +32,14 @@ const editFlight = function (event) {
     .catch(() => { $('#update-error').text('Sorry, that didn\'t work. Please try again. Please note, Date and time are required.') })
 }
 const getOneFlightSuccess = function (data) {
-  console.log('flight success!', data)
   data['flight']['hrs'] = parseInt(data['flight']['duration'])
   data['flight']['min'] = parseInt(((data['flight']['duration']) - (data['flight']['hrs'])) * 60)
-  console.log('this is data after calculation', data)
   const editFlightModal = editFlightTemplate({ flight: data.flight })
   $('#edit-flight-content').html(editFlightModal)
 }
 
 const editButtonBehavior = function () {
-  console.log('clicked edit', event.target.dataset.id)
+  $('#section-alerts').text('')
   const id = event.target.dataset.id
   // event.target.dataset.id === id of the flight
   flightAjax.getOneFlight(id)
@@ -53,12 +55,12 @@ const deleteButtonBehavior = function (event) {
 const deleteFlightSuccess = function () {
   $('#delete-modal').modal('toggle') // close modal on successful update
   listFlightsBehavior() // refreshes the flight list.
+  $('#section-alerts').text('')
   $('#section-alerts').text('Your flight was successfully deleted')
   $('#delete-modal-alert').text('')
 }
 const confirmDeleteBehavior = function (event) {
   const id = event.target.dataset.id
-  console.log('id for confirm is', id)
   flightAjax.deleteFlight(id)
     .then(deleteFlightSuccess)
     .catch(() => $('#delete-modal-alert').text('Sorry, there was an error deleting your flight, Please try again later.'))

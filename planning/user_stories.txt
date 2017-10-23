@@ -1,0 +1,9 @@
+As a new user I would like to sign up
+As a returning user I would like to sign in and sign out.
+As a user who is signed in, I want to update my password.
+As a pilot who just landed I want to add a flight from a mobile device.
+As a user I want to view a list of all recorded flights with details for each one.
+As a user I want to update/edit the details for flight that has already been recorded.
+As a user I want the ability to delete flights.
+As a pilot, I want to know how many flights I've had, and how many hours I've flown.
+As a pilot, I want to see my best flights.

@@ -9,7 +9,6 @@ const signUp = function (data) {
   })
 }
 const logIn = function (data) {
-  // console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
@@ -17,7 +16,6 @@ const logIn = function (data) {
   })
 }
 const logOut = function () {
-  // console.log('store id is', store)
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',
@@ -27,7 +25,6 @@ const logOut = function () {
   })
 }
 const updatePassword = function (data) {
-  // console.log('data is', data, 'store is', store)
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',

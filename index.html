@@ -13,9 +13,9 @@
       <div class='page'>
       <header>
         <div style='width:100%;' class='clearfix'>
-        <h1 style='float:right;'>Flight Log</h1>
-        <div>
-        <a id='logout' name='logout'>Sign Out</a>
+          <h1 style='float:right;'>Flight Log</h1>
+        </div>
+        <h4><a id='logout' name='logout'>Sign Out</a></h4>
       </header>
       <hr>
       <nav id='navbar'>
@@ -35,9 +35,9 @@
           <input class='login' name="credentials[password]" type="password" placeholder="password">
           <button type='submit'>Log In</button>
         </form>
-        <h4 id='sign-up-link'>Don't have a username yet? <a>Please Sign Up!</a><h4>
+        <h4 id='sign-up-link'>Don't have a username yet? <a>Please Sign Up!</a></h4>
         <form id='sign-up'>
-          <h3>First time here? Pick a username and Password to sign up</h3>
+          <h3>First time here?</h3><h4> Pick a username and Password to sign up</h4>
           <input class='login' name="credentials[email]" type='text' placeholder="username">
           <input class='login' name="credentials[password]" type="password" placeholder="password">
           <input class='login' name="credentials[password_confirmation]" type="password" placeholder="confirm password">
@@ -49,92 +49,94 @@
       </section>
       <h2 id="section-header"></h2>
       <p id="section-alerts" class='alert'></p>
-       <div class='image-container'>
-         <img id='pg-sketch' src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/master/assets/images/glidersketch.jpg" alt='paraglider-sketch'>
-       </div>
+     <div class='image-container'>
+       <img id='pg-sketch' src="https://raw.githubusercontent.com/dianamcnulty/flightlogclient/20c43b41c928ecbe45f7205eb3aba796aad7f60c/assets/images/glidersketch.jpg" alt='paraglider-sketch'>
+     </div>
 <!-- Add Flights section -->
-      <section id='add-flights-view' class='page'>
-        <form id='new-flight-form' autocomplete="on">
-          <label>Flight Type:</label><input class="flight-input" type="string" name="flight[flight_type]" placeholder="pg, hg, ppg, etc."><br>
-          <label>Date:</label><input class="flight-input" type="date" name="flight[date]" autocomplete="off"><br>
-          <label>Time:</label><input class="flight-input" type="time" name="flight[time]" autocomplete="off"><br>
-          <label>Location:</label><input class="flight-input" type="text" name="flight[launch]" placeholder="Launch Site"><br>
-          <label>Landing Zone:</label><input class="flight-input" type="text" name="flight[lz]" placeholder="Landing Zone"><br>
-          <label>Duration:</label> <input class="flight-input number-box" type="number" name="flight[hrs]"  placeholder="0" autocomplete="off"><span>hrs.</span>
-          <input class="flight-input number-box" type="number" name="flight[min]"  placeholder="0" autocomplete="off"><span>mins.</span>
-          <!-- <input name="min" class="flight-input" type="number" min="0" max="60" placeholder="mins" autocomplete="off"> -->
-          <br>
-          <label>Distance:</label> <input class="flight-input number-box" type="number"step="0.1" name="flight[distance]" placeholder="0.00"><span>km.</span><br>
-          <label>Glider:</label> <input class="flight-input" type="text" name="flight[wing]" placeholder="Glider"><br>
-          <label>Notes:</label> <br>
-          <textarea class="flight-input edit-note" rows="4" cols="50" name="flight[notes]" form="new-flight-form" placeholder="enter notes here..." autocomplete="off"></textarea><br>
-          <button type="submit">Save</button>
-        </form>
-      </section>
+    <section id='add-flights-view' class='page'>
+      <form id='new-flight-form' autocomplete="on">
+        <label>Flight Type:</label><input class="flight-input" type="text" name="flight[flight_type]" placeholder="pg, hg, ppg, etc."><br>
+        <label>Date:</label><input class="flight-input" type="date" name="flight[date]" autocomplete="off"><br>
+        <label>Time:</label><input class="flight-input" type="time" name="flight[time]" autocomplete="off"><br>
+        <label>Location:</label><input class="flight-input" type="text" name="flight[launch]" placeholder="Launch Site"><br>
+        <label>Landing Zone:</label><input class="flight-input" type="text" name="flight[lz]" placeholder="Landing Zone"><br>
+        <label>Duration:</label> <span class='input-desc'>hrs.</span><input class="flight-input number-box" type="number" min='0' name="flight[hrs]"  placeholder="0" autocomplete="off">
+        <span>mins.</span><input class="flight-input number-box" type="number" min='0' name="flight[min]"  placeholder="0" autocomplete="off">
+        <br>
+        <label>Distance:</label> <span class='input-desc'>kms.</span> <input class="flight-input number-box" type="number"step="0.1" min='0' name="flight[distance]" placeholder="0.00"><br>
+        <label>Glider:</label> <input class="flight-input" type="text" name="flight[wing]" placeholder="Glider"><br>
+        <label>Notes:</label> <br>
+        <textarea class="flight-input edit-note" rows="4" cols="50" name="flight[notes]" form="new-flight-form" placeholder="enter notes here..."></textarea><br>
+        <button type="submit">Save</button>
+      </form>
+    </section>
 <!-- flight-table stuff here -->
-      <section class='flight-table'>
-        <div id='flight-table-contents' class='flight-table'></div>
-      </section>
+    <section class='flight-table'>
+      <div id='flight-table-contents' class='flight-table'></div>
+    </section>
 <!-- modal for edit flight -->
-      <div>
-        <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-
-            <div class="modal-content" >
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                <h3 class="modal-title" id="modal-label">Update This Flight</h3>
-                <p class='alert' id='update-error' style='margin-bottom: 0;'></p>
-              </div>
-              <div class="modal-body" id='edit-flight-content'>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn navlink" style="float: left;" data-dismiss="modal">Cancel</button>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-<!--  delete modal here -->
-      <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div>
+      <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
+
+          <div class="modal-content" >
             <div class="modal-header">
-              <h5 class="modal-title" id="deleteModalLabel">Delete your Flight?</h5>
-              <button type="button" class="close nevermind" data-dismiss="modal" aria-label="Close">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
+              <h3 class="modal-title" id="modal-label">Update This Flight</h3>
+              <p class='alert' id='update-error' style='margin-bottom: 0;'></p>
             </div>
-            <div class="modal-body">
-              <p>Are you sure you want to delete this flight? It will be gone forever!</p>
-              <p id='delete-modal-alert'></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn navlink nevermind" data-dismiss="modal">Nevermind.</button>
-              <button id='confirm-delete' data-id="" type="button" class="btn navlink">Delete it!</button>
-            </div>
+            <div class="modal-body" id='edit-flight-content'>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn navlink" style="float: left;" data-dismiss="modal">Cancel</button>
+          </div>
           </div>
         </div>
       </div>
+    </div>
+<!--  delete modal here -->
+    <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="deleteModalLabel">Delete your Flight?</h3>
+            <button type="button" class="close nevermind" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete this flight? It will be gone forever!</p>
+            <p id='delete-modal-alert'></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn navlink nevermind" data-dismiss="modal">Nevermind.</button>
+            <button id='confirm-delete' data-id="" type="button" class="btn navlink">Delete it!</button>
+          </div>
+        </div>
+      </div>
+    </div>
 <!-- Stats stuff here -->
-      <section id='stats-view'>
-        <h3 class='stat-label'>Number of Flights:</h3><span id='flight-count'></span>
+    <section id='stats-view'>
+      <div>
+        <h3 class='stat-label'>Number of Flights:</h3><span id='flight-count' class='input-desc'></span>
         <br>
-        <h3 class='stat-label'>Total Flight Hours:</h3><span id='hour-sum'></span>
-        <br><h3 class='stat-label'>Number of Sites Flown:</h3><span id='site-count'></span>
-        <br>
-        <br>
-        <section class='page highlight'>
-          <h3>Your Record Best</h3>
-          <h4 class='stat-label'>Farthest Flight: </h4><span id='most-km'></span><br>
-          <label>Date: </label><span id='farthest-date'></span><br>
-          <label>Location: </label><span id='farthest-location'></span><br><br>
-          <h4 class='stat-label'>Longest Flight: </h4><span id='most-hrs'></span><br>
-          <label>Date: </label><span id='longest-date'></span><br>
-          <label>Location: </label><span id='longest-location'></span><br>
+        <h3 class='stat-label'>Total Flight Hours:</h3><span id='hour-sum' class='input-desc'></span>
+        <br><h3 class='stat-label'>Number of Sites Flown:</h3><span id='site-count' class='input-desc'></span>
+      </div>
+      <br><br>
+      <section class='page highlight'>
+        <h3>Your Record Best</h3>
+        <h3 class='stat-label' style='width:200;'>Farthest Flight: </h3><span id='most-km' ></span><br>
+        <label>Date: </label><span id='farthest-date'></span><br>
+        <label>Location: </label><span id='farthest-location'></span><br><br>
+        <h3 class='stat-label'>Longest Flight: </h3><span id='most-hrs'></span><br>
+        <label>Date: </label><span id='longest-date'></span><br>
+        <label>Location: </label><span id='longest-location'></span><br>
+      </section>
+        <section class='gliders' id='glider-stat-content'>
         </section>
       </section>
       <form id='password-update'>
