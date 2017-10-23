@@ -60,11 +60,10 @@
           <label>Time:</label><input class="flight-input" type="time" name="flight[time]" autocomplete="off"><br>
           <label>Location:</label><input class="flight-input" type="text" name="flight[launch]" placeholder="Launch Site"><br>
           <label>Landing Zone:</label><input class="flight-input" type="text" name="flight[lz]" placeholder="Landing Zone"><br>
-          <label>Duration:</label> <input class="flight-input number-box" type="number" name="flight[hrs]"  placeholder="0" autocomplete="off"><span>hrs.</span>
-          <input class="flight-input number-box" type="number" name="flight[min]"  placeholder="0" autocomplete="off"><span>mins.</span>
-          <!-- <input name="min" class="flight-input" type="number" min="0" max="60" placeholder="mins" autocomplete="off"> -->
+          <label>Duration:</label> <span class='input-desc'>hrs.</span><input class="flight-input number-box" type="number" name="flight[hrs]"  placeholder="0" autocomplete="off">
+          <span>mins.</span><input class="flight-input number-box" type="number" name="flight[min]"  placeholder="0" autocomplete="off">
           <br>
-          <label>Distance:</label> <input class="flight-input number-box" type="number"step="0.1" name="flight[distance]" placeholder="0.00"><span>km.</span><br>
+          <label>Distance:</label> <span class='input-desc'>kms.</span> <input class="flight-input number-box" type="number"step="0.1" name="flight[distance]" placeholder="0.00"><br>
           <label>Glider:</label> <input class="flight-input" type="text" name="flight[wing]" placeholder="Glider"><br>
           <label>Notes:</label> <br>
           <textarea class="flight-input edit-note" rows="4" cols="50" name="flight[notes]" form="new-flight-form" placeholder="enter notes here..." autocomplete="off"></textarea><br>
@@ -121,15 +120,15 @@
       </div>
 <!-- Stats stuff here -->
       <section id='stats-view'>
-        <h3 class='stat-label'>Number of Flights:</h3><span id='flight-count'></span>
+        <h3 class='stat-label'>Number of Flights:</h3><span id='flight-count' class='input-desc'></span>
         <br>
-        <h3 class='stat-label'>Total Flight Hours:</h3><span id='hour-sum'></span>
-        <br><h3 class='stat-label'>Number of Sites Flown:</h3><span id='site-count'></span>
+        <h3 class='stat-label'>Total Flight Hours:</h3><span id='hour-sum' class='input-desc'></span>
+        <br><h3 class='stat-label'>Number of Sites Flown:</h3><span id='site-count' class='input-desc'></span>
         <br>
         <br>
         <section class='page highlight'>
           <h3>Your Record Best</h3>
-          <h4 class='stat-label'>Farthest Flight: </h4><span id='most-km'></span><br>
+          <h4 class='stat-label'>Farthest Flight: </h4><span id='most-km' ></span><br>
           <label>Date: </label><span id='farthest-date'></span><br>
           <label>Location: </label><span id='farthest-location'></span><br><br>
           <h4 class='stat-label'>Longest Flight: </h4><span id='most-hrs'></span><br>

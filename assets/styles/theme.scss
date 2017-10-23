@@ -101,13 +101,13 @@ input, textarea {
   font-family: $small-font;
   color: $darkest-brown;
   background: linear-gradient(to top, #deded1, #c4c2ad);
-  margin: 5px 10px;
+  margin: 5px 10px 5px 0px;
   font-size: 15px;
   border: ridge 2px white;
   padding: 5px;
 }
 label {
-  width: 200px;
+  width: 150px;
   font-size: 20px;
 }
 .navlink:hover,
@@ -199,12 +199,13 @@ img {
   .flight-table{
     margin: auto;
   }
-  .flight-input {
-    display: block;
-  }
   .edit-note {
     width: 80%;
   }
+  input, .input-desc{
+    display: block;
+  }
+
 }
 @media screen and (min-width: 850px) {
   body {
