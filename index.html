@@ -54,8 +54,17 @@
        </div>
 <!-- Add Flights section -->
       <section id='add-flights-view' class='page'>
+
         <form id='new-flight-form' autocomplete="on">
-          <label>Flight Type:</label><input class="flight-input" type="string" name="flight[flight_type]" placeholder="pg, hg, ppg, etc."><br>
+          <label>Flight Type:</label><!-- <input class="flight-input" type="text" name="flight[flight_type]" placeholder="pg, hg, ppg, etc."> -->
+          <select style='radius:0;'name="flight[flight_type]">
+            <option value="Paragliding">Paragliding</option>
+            <option value="Hang Gliding">Hang Gliding</option>
+            <option value="Powered Paragliding">Powered Paragliding</option>
+            <option value="Trike">Trike</option>
+            <option value="Powered Parachute">Powered Parachute</option>
+          </select>
+          <br>
           <label>Date:</label><input class="flight-input" type="date" name="flight[date]" autocomplete="off"><br>
           <label>Time:</label><input class="flight-input" type="time" name="flight[time]" autocomplete="off"><br>
           <label>Location:</label><input class="flight-input" type="text" name="flight[launch]" placeholder="Launch Site"><br>
