@@ -1,28 +1,28 @@
 <table>
   <thead class='table-header'>
-      <th class='hide-mobile'>Flight Type</th>
       <th class='show-mobile'>Date</th>
       <th class='show-mobile'>Time</th>
-      <th class='hide-mobile'>kms.</th>
-      <th class='show-mobile'>hrs.</th>
       <th class='show-mobile'>Launch Location</th>
       <th class='hide-mobile'>Landing Location</th>
+      <th class='hide-mobile'>kms.</th>
+      <th class='show-mobile'>hrs.</th>
       <th class='hide-mobile'>Wing</th>
+      <th class='hide-mobile'>Flight Type</th>
   </thead>
   <tbody>
   {{#each flights as |flight|}}
     <tr>
-      <td class='hide-mobile'>{{flight.flight_type}}</td>
       <td class='show-mobile'>{{flight.date}}</td>
       <td class='show-mobile'>{{flight.time}}</td>
-      <td class='hide-mobile'>{{flight.distance}}</td>
-      <td class='show-mobile'>{{flight.duration}}</td>
       <td class='show-mobile'>{{flight.launch}}</td>
       <td class='hide-mobile'>{{flight.lz}}</td>
+      <td class='hide-mobile'>{{flight.distance}}</td>
+      <td class='show-mobile'>{{flight.duration}}</td>
       <td class='hide-mobile'>{{flight.wing}}</td>
+      <td class='hide-mobile'>{{flight.flight_type}}</td>
     </tr>
     <tr>
-      <td class='hide-mobile note-cell' colspan="6"> <label> Notes:</label>  {{flight.notes}}</td>
+      <td class='hide-mobile note-cell' colspan="6"> <label class='table-label'> Notes:</label>  {{flight.notes}}</td>
       <td class='button-cell'>
         <button data-id="{{flight.id}}" type="button" class="table-button btn edit" data-toggle="modal" data-target="#edit-modal">Edit</button>
       </td>

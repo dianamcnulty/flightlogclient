@@ -173,6 +173,10 @@ img {
   color: $headers;
   display: inline;
 }
+.table-label {
+  width: 90px;
+  font-size: 15px;
+}
 .clearfix:after {
   clear: both;
   content: ''; /* Older browser do not support */
