@@ -12,7 +12,7 @@ const setStats = function () {
       farthestFlight(data)
       longestFlight(data)
       const gliders = gliderStats(data)
-      console.log('passing this into template', gliders)
+      // console.log('passing this into template', gliders)
       const showGliderStats = gliderTemplate({ wings: gliders.wings })
       $('#glider-stat-content').html(showGliderStats)
     })
@@ -23,7 +23,7 @@ const setStats = function () {
 const calculateHours = function (data) {
   const flights = data.flights
   let total = 0
-  console.log(data.flights)
+  // console.log(data.flights)
   for (let i = 0; i < flights.length; i++) {
     if (flights[i]['duration']) {
       // console.log(flights[i]['duration'])
@@ -48,9 +48,9 @@ const calculateSites = function (data) {
       siteList[launch] = 1
     }
   }
-  console.log('site list is', siteList)
+  // console.log('site list is', siteList)
   const totalSites = Object.keys(siteList).length
-  console.log('totalSites is', totalSites)
+  // console.log('totalSites is', totalSites)
   return totalSites
 }
 
@@ -104,7 +104,7 @@ const gliderStats = function (data) {
   for (const x in gliders) {
     gliderArray.push({'glider': x, 'duration': gliders[x]})
   }
-  console.log('gliders data is', gliderData)
+  // console.log('gliders data is', gliderData)
   return gliderData
 }
 

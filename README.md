@@ -31,6 +31,11 @@ Usability issues:
 - Add the ability to toggle between miles and km for distance
 - change format of time of day to a more user friendly display.
 
+Code clean-up:
+- refactor code for 'stats'.
+  - the '.then' method has a lot going on in the anonymous callback. I need to move that into a named funciton, then pass it in. anonymous callback. I need to move that into a named funciton, then pass it in.
+  - gliderStats function has a lot of nested conditionals. I'm sure there's a cleaner way to do that. getting the results into the right format for handlebars made the function much more complicated. There are also a lot of similar variables.
+
 
 Potential enhancements (Luxury edition)
 - Eventually, I could add the ability for pilots to upload their previous flight data via a CSV file.
