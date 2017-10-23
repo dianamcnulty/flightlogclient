@@ -3,7 +3,7 @@
 const config = {
   apiOrigins: {
     development: 'http://localhost:4741',
-    production: 'https://pgflightlog.herokuapp.com/'
+    production: 'https://pgflightlog.herokuapp.com'
   }
 }
 
