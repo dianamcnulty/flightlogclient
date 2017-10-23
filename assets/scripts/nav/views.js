@@ -22,7 +22,7 @@ const landingView = function () {
   $('#logout').show()
   $('#auth').hide()
   $('#stats-view').hide()
-  $('.alert').text('')
+  $('#auth-error').hide()
   $('#navbar').show()
   $('#flight-table-contents').hide()
   $('#section-header').text('Did you have good flight?')
@@ -38,7 +38,6 @@ const profileView = function () {
   $('#section-alerts').text('')
 }
 const showFlightsView = function () {
-  console.log('clicked the view button')
   $('#password-update').hide()
   $('#pg-sketch').hide()
   $('#stats-view').hide()
@@ -49,7 +48,6 @@ const showFlightsView = function () {
   flightListEvents.listFlightsBehavior()
 }
 const addFlightsView = function () {
-  console.log('clicked the add button')
   $('#password-update').hide()
   $('#pg-sketch').hide()
   $('#flight-error').hide()

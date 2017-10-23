@@ -51,7 +51,7 @@ a:hover {
 }
 .alert {
   color: #a33900;
-  font-family: $big-font;
+  font-family: $small-font;
   font-size: 15px;
   margin: 0;
 }
@@ -108,7 +108,9 @@ input, textarea, select {
 }
 label {
   width: 150px;
+  font-family: $big-font;
   font-size: 20px;
+
 }
 .navlink:hover,
 button:hover {
@@ -172,9 +174,10 @@ img {
 .stat-label {
   color: $headers;
   display: inline;
+  padding-right: 5px;
 }
 .table-label {
-  width: 90px;
+  width: 60px;
   font-size: 15px;
 }
 .clearfix:after {
@@ -212,9 +215,12 @@ img {
     background: rgba(222, 222, 210, 0.0);
     padding: 15px 75px;
   }
+  h1 {
+    margin-top: 0;
+  }
   img {
     position: absolute;
-    top: 140px;
+    top: 80px;
     right:0;
     z-index: -1;
   }
