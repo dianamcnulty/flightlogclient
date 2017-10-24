@@ -5,21 +5,29 @@ const setStats = function () {
   $('#site-count').text('')
   $('#hour-sum').text('')
   flightAPI.getAllFlights()
-    .then((data) => {
-      $('#flight-count').text(' ' + data.flights.length)
-      $('#hour-sum').text(' ' + calculateHours(data))
-      $('#site-count').text(' ' + calculateSites(data))
-      farthestFlight(data)
-      longestFlight(data)
-      const gliders = gliderStats(data)
-      // console.log('passing this into template', gliders)
-      const showGliderStats = gliderTemplate({ wings: gliders.wings })
-      $('#glider-stat-content').html(showGliderStats)
-    })
+    .then(statPageEvents)
     .catch(() => {
+      $('#section-alerts').css('color', '#a33900')
       $('#section-alerts').text('Sorry, there was an error retrieving your flight stats. Please try again later.')
     })
 }
+const statPageEvents = function (data) {
+  if (data.flights.length > 0) {
+    $('#flight-count').text(' ' + data.flights.length)
+    $('#hour-sum').text(' ' + calculateHours(data))
+    $('#site-count').text(' ' + calculateSites(data))
+    farthestFlight(data)
+    longestFlight(data)
+    const gliders = gliderStats(data)
+    // console.log('passing this into template', gliders)
+    const showGliderStats = gliderTemplate({ wings: gliders.wings })
+    $('#glider-stat-content').html(showGliderStats)
+  } else {
+    $('#section-alerts').css('color', '#a33900')
+    $('#section-alerts').text("Looks like you haven't added any flights yet. If you'd like to add one, just click the 'Add a Flight' button above")
+  }
+}
+
 const calculateHours = function (data) {
   const flights = data.flights
   let total = 0

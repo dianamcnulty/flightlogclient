@@ -31,12 +31,14 @@ const logOutSuccess = function (data) {
 }
 const passwordSuccess = function (data) {
   // console.log('password changed successfully')
+  $('#section-alerts').css('color', '#546819')
   $('#section-alerts').text('Your password has beeen updated. Please use your new password next time you log in.')
   $('#password-update').hide()
   $('#oldpass').val('')
   $('#newpass').val('')
 }
 const passwordFail = function () {
+  $('#section-alerts').css('color', '#a33900')
   $('#section-alerts').text('uh oh... your password update didn\'t process. Please Try again')
   $('#section-alerts').hide()
   $('#section-alerts').fadeIn(200)

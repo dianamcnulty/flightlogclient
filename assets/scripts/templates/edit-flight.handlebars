@@ -7,7 +7,7 @@
   <br>
   <label>Date:</label><input class="flight-input" type="date" name="flight[date]" required autocomplete="off" value='{{flight.date}}'>
   <br>
-  <label>Time:</label> <input class="flight-input" type='text' name="flight[time]" required autocomplete="off" value='{{flight.time}}'>
+  <label>Time:</label> <input class="flight-input" type='time' name="flight[time]" required autocomplete="off" value='{{flight.time}}'>
   <br>
   <label>Location:</label> <input class="flight-input" type="text"  name="flight[launch]" value='{{flight.launch}}'>
   <br>
@@ -16,7 +16,7 @@
   <label>Duration:</label> <span class='input-desc'>hrs.</span><input class="flight-input number-box" type="number" name="flight[hrs]"  placeholder="0" autocomplete="off" value='{{flight.hrs}}'>
   <span>mins.</span><input class="flight-input number-box" type="number" name="flight[min]"  placeholder="0" autocomplete="off"value='{{flight.min}}'>
   <br>
-  <label>Distance:</label><span class='input-desc'>kms.</span> <input class="flight-input" type="number" step="0.01" name="flight[distance]" placeholder='km' value='{{flight.distance}}'>
+  <label>Distance:</label><span class='input-desc'>kms.</span> <input class="flight-input number-box"  type="number" step="0.01" name="flight[distance]" placeholder='km' value='{{flight.distance}}'>
   <br>
   <label>Glider:</label> <input class="flight-input" type="text" name="flight[wing]" placeholder="glider" value='{{flight.wing}}' >
   <br>

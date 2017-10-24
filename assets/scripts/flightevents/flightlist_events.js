@@ -8,6 +8,7 @@ const getFlightsSuccess = function (data) {
     const showFlightTable = showFlightsTemplate({ flights: data.flights })
     $('#flight-table-contents').html(showFlightTable)
   } else {
+    $('#section-alerts').css('color', '#a33900')
     $('#section-alerts').text("Looks like you haven't added any flights yet. If you'd like to add one, just click the 'Add a Flight' button above")
   }
 }
@@ -16,10 +17,14 @@ const listFlightsBehavior = function () {
   // event.preventDefault() // I think this isn't needed
   flightAjax.getAllFlights()
     .then(getFlightsSuccess)
-    .catch(() => $('#section-alerts').text('Sorry, we were unable to retrieve your flight data right now. Please try again later.'))
+    .catch(() => {
+      $('#section-alerts').css('color', '#a33900')
+      $('#section-alerts').text('Sorry, we were unable to retrieve your flight data right now. Please try again later.')
+    })
 }
 const editFlightSuccess = function () {
   $('#edit-modal').modal('toggle') // close modal on successful update
+  $('#section-alerts').css('color', '#546819')
   $('#section-alerts').text('Your flight was updated successfully')
   listFlightsBehavior() // refreshes the flight list.
 }
@@ -56,6 +61,7 @@ const deleteFlightSuccess = function () {
   $('#delete-modal').modal('toggle') // close modal on successful update
   listFlightsBehavior() // refreshes the flight list.
   $('#section-alerts').text('')
+  $('#section-alerts').css('color', '#546819')
   $('#section-alerts').text('Your flight was successfully deleted')
   $('#delete-modal-alert').text('')
 }
