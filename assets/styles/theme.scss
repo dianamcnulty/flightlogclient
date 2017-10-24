@@ -214,7 +214,7 @@ img {
   }
 
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 800px) {
   body {
     background: rgba(222, 222, 210, 0.0);
     padding: 15px 75px;
@@ -229,13 +229,10 @@ img {
     z-index: -1;
   }
   #logout {
-position: absolute;
-top: 15px;
+    position: absolute;
+    top: 15px;
   }
   .navlink {
     width: 300px;
   }
-}
-* {
-  border-radius: 0 !important;
 }
