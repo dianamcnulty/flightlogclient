@@ -24,7 +24,7 @@ const listFlightsBehavior = function () {
 }
 const editFlightSuccess = function () {
   $('#edit-modal').modal('toggle') // close modal on successful update
-  $('#section-alerts').css('color', '#565b2c')
+  $('#section-alerts').css('color', '#546819')
   $('#section-alerts').text('Your flight was updated successfully')
   listFlightsBehavior() // refreshes the flight list.
 }
@@ -61,7 +61,7 @@ const deleteFlightSuccess = function () {
   $('#delete-modal').modal('toggle') // close modal on successful update
   listFlightsBehavior() // refreshes the flight list.
   $('#section-alerts').text('')
-  $('#section-alerts').css('color', '#565b2c')
+  $('#section-alerts').css('color', '#546819')
   $('#section-alerts').text('Your flight was successfully deleted')
   $('#delete-modal-alert').text('')
 }

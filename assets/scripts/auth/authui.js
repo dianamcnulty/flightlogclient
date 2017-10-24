@@ -31,7 +31,7 @@ const logOutSuccess = function (data) {
 }
 const passwordSuccess = function (data) {
   // console.log('password changed successfully')
-  $('#section-alerts').css('color', '#565b2c')
+  $('#section-alerts').css('color', '#546819')
   $('#section-alerts').text('Your password has beeen updated. Please use your new password next time you log in.')
   $('#password-update').hide()
   $('#oldpass').val('')

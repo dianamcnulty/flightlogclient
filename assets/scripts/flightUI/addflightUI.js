@@ -3,7 +3,7 @@ const views = require('../nav/views')
 const newFlightSuccess = function (response) {
   $('.flight-input').val('')
   views.landingView()
-  $('#section-alerts').css('color', '#565b2c')
+  $('#section-alerts').css('color', '#546819')
   $('#section-alerts').text('Your flight has been added successfully')
 }
 const newFlightFailure = function () {
