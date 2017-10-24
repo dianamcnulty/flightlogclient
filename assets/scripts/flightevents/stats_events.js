@@ -17,6 +17,7 @@ const setStats = function () {
       $('#glider-stat-content').html(showGliderStats)
     })
     .catch(() => {
+      $('#section-alerts').css('color', '#a33900')
       $('#section-alerts').text('Sorry, there was an error retrieving your flight stats. Please try again later.')
     })
 }

@@ -216,13 +216,17 @@ img {
     padding: 15px 75px;
   }
   h1 {
-    margin-top: 0;
+    margin: 0;
   }
   img {
     position: absolute;
-    top: 80px;
+    top: 120px;
     right:0;
     z-index: -1;
+  }
+  #logout {
+position: absolute;
+top: 15px;
   }
   .navlink {
     width: 300px;
