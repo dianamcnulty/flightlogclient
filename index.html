@@ -56,7 +56,9 @@
     <section id='add-flights-view' class='page'>
       <form id='new-flight-form' autocomplete="on">
         <label>Flight Type:</label><!-- <input class="flight-input" type="text" name="flight[flight_type]" placeholder="pg, hg, ppg, etc."> -->
-        <select class="flight-input" style='border-radius: 0px; height:37px' name="flight[flight_type]" val='select a type'>
+        <select class="flight-input" style='height:37px;
+        border: hidden;
+        outline: 2px ridge white;' name="flight[flight_type]" val='select a type'>
           <option value="" disabled selected style="display: none;">Please Choose</option>
           <option value="Paragliding">Paragliding</option>
           <option value="Hang Gliding">Hang Gliding</option>
