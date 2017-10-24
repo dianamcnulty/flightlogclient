@@ -65,21 +65,7 @@ const confirmDeleteBehavior = function (event) {
     .then(deleteFlightSuccess)
     .catch(() => $('#delete-modal-alert').text('Sorry, there was an error deleting your flight, Please try again later.'))
 }
-// const filterByType = function (data, type) {
-//   const flights = data.flights
-//   for (let i = 0; i < flights.length; i++) {
-//     if (flights[i] !== type) {
-//       flights.splice(i, 1)
-//     }
-//   }
-//   return flights
-// }
-//
-// const filterButtonBehavior = function (type) {
-//   flightAjax.getAllFlights()
-//     .then(filterByType(data, type))
-//     .catch(() => $('#section-alerts').text('Sorry, we were unable to retrieve your flight data right now. Please try again later.'))
-// }
+
 module.exports = {
   listFlightsBehavior,
   editFlight,
