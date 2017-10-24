@@ -12,13 +12,13 @@
     <option value="Powered Parachute">Powered Parachute</option>
   </select>
   <br>
-  <label>Date:</label><input class="flight-input" type="date" name="flight[date]" required autocomplete="off" value='{{flight.date}}'>
+  <label>Date:</label><input class="flight-input" type="date" name="flight[date]" required autocomplete="off" value='{{flight.date}}' placeholder="mm/dd/yyyy">
   <br>
-  <label>Time:</label> <input class="flight-input" type='time' name="flight[time]" required autocomplete="off" value='{{flight.time}}'>
+  <label>Time:</label> <input class="flight-input" type='time' name="flight[time]" required autocomplete="off" value='{{flight.time}}' placeholder="hh:mm AM">
   <br>
-  <label>Location:</label> <input class="flight-input" type="text"  name="flight[launch]" value='{{flight.launch}}'>
+  <label>Location:</label> <input class="flight-input" type="text"  name="flight[launch]" value='{{flight.launch}}' placeholder="launch Site">
   <br>
-  <label>Landing Zone:</label> <input class="flight-input" type="text"  name="flight[lz]" value='{{flight.lz}}'>
+  <label>Landing Zone:</label> <input class="flight-input" type="text"  name="flight[lz]" value='{{flight.lz}}'placeholder="landing zone">
   <br>
   <label>Duration:</label> <span class='input-desc'>hrs.</span><input class="flight-input number-box" type="number" name="flight[hrs]"  placeholder="0" autocomplete="off" value='{{flight.hrs}}'>
   <span>mins.</span><input class="flight-input number-box" type="number" name="flight[min]"  placeholder="0" autocomplete="off"value='{{flight.min}}'>
