@@ -3,7 +3,15 @@
 <form autocomplete="on" id='flight-update-form' class='update-form'>
   <input type="hidden" name='flight[id]' value='{{flight.id}}'>
   <label>Flight Type:</label>
-  <input class="flight-input" type="text" name="flight[flight_type]"  value='{{flight.flight_type}}'>
+  <!-- <input class="flight-input" type="text" name="flight[flight_type]"  value='{{flight.flight_type}}'> -->
+  <select class="flight-input" style='border-radius: 0px; height:37px' name="flight[flight_type]" val='select a type'>
+    <option value="{{flight.flight_type}}" disabled selected style="display: none;">{{flight.flight_type}}</option>
+    <option value="Paragliding">Paragliding</option>
+    <option value="Hang Gliding">Hang Gliding</option>
+    <option value="Powered Paragliding">Powered Paragliding</option>
+    <option value="Trike">Trike</option>
+    <option value="Powered Parachute">Powered Parachute</option>
+  </select>
   <br>
   <label>Date:</label><input class="flight-input" type="date" name="flight[date]" required autocomplete="off" value='{{flight.date}}'>
   <br>
