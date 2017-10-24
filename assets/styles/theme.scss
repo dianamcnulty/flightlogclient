@@ -97,7 +97,7 @@ nav {
   width: 150px;
 }
 
-input, textarea {
+input, textarea, select {
   font-family: $small-font;
   color: $darkest-brown;
   background: linear-gradient(to top, #deded1, #c4c2ad);
@@ -220,13 +220,9 @@ img {
   }
   img {
     position: absolute;
-    top: 120px;
+    top: 80px;
     right:0;
     z-index: -1;
-  }
-  #logout {
-position: absolute;
-top: 15px;
   }
   .navlink {
     width: 300px;
