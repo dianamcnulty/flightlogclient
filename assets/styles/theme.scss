@@ -194,13 +194,14 @@ img {
   .button-cell{
     border-right: hidden;
     width:auto;
-    background: $background
+    background: $background;
   }
   .show-mobile{
     border-top: 2px ridge $borders;
   }
-  .flight-table{
+  table{
     margin: auto;
+    border-bottom: hidden;
   }
   .edit-note {
     width: 80%;
