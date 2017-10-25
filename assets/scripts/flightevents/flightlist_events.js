@@ -3,6 +3,7 @@ const editFlightTemplate = require('../templates/edit-flight.handlebars')
 const flightAjax = require('../API/flightapi')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
+// 6. updates the page with results of index call. (refreshes the list after edit and delete.)
 const getFlightsSuccess = function (data) {
   if (data.flights.length > 0) {
     const showFlightTable = showFlightsTemplate({ flights: data.flights })
@@ -13,6 +14,7 @@ const getFlightsSuccess = function (data) {
   }
 }
 
+// 5. sends API request to get list of flights.
 const listFlightsBehavior = function () {
   // event.preventDefault() // I think this isn't needed
   flightAjax.getAllFlights()
@@ -22,12 +24,15 @@ const listFlightsBehavior = function () {
       $('#section-alerts').text('Sorry, we were unable to retrieve your flight data right now. Please try again later.')
     })
 }
+// 4. closes modal and gives success message.
 const editFlightSuccess = function () {
   $('#edit-modal').modal('toggle') // close modal on successful update
   $('#section-alerts').css('color', '#546819')
   $('#section-alerts').text('Your flight was updated successfully')
   listFlightsBehavior() // refreshes the flight list.
 }
+
+// 3. this happens when sumbit button is clicked for edit form.
 const editFlight = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
@@ -36,6 +41,8 @@ const editFlight = function (event) {
     .then(editFlightSuccess)
     .catch(() => { $('#update-error').text('Sorry, that didn\'t work. Please try again. Please note, Date and time are required.') })
 }
+// 2. success from 'show' gets data to  populate the edit form.
+// duration is changed to hr/min format. then sent to template
 const getOneFlightSuccess = function (data) {
   data['flight']['hrs'] = parseInt(data['flight']['duration'])
   data['flight']['min'] = parseInt(((data['flight']['duration']) - (data['flight']['hrs'])) * 60)
@@ -43,6 +50,7 @@ const getOneFlightSuccess = function (data) {
   $('#edit-flight-content').html(editFlightModal)
 }
 
+// 1. when user clicks edit button.
 const editButtonBehavior = function () {
   $('#section-alerts').text('')
   const id = event.target.dataset.id
