@@ -110,7 +110,7 @@ const gliderStats = function (data) {
     }
   }
   for (const x in gliders) {
-    gliderArray.push({'glider': x, 'duration': gliders[x]})
+    gliderArray.push({'glider': x, 'duration': gliders[x].toFixed(2)})
   }
   // console.log('gliders data is', gliderData)
   return gliderData
