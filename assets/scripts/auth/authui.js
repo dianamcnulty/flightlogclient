@@ -3,7 +3,8 @@ const view = require('../nav/views')
 
 const signUpSuccess = function (data) {
   // console.log('signed up successfully', store)
-  $('#signupmessage').text('Thanks for signing up! Enter your new user name and password to log in.')
+  $('#section-alerts').css('color', '#546819')
+  $('#section-alerts').text('Thanks for signing up! Enter your new user name and password to log in.')
   $('#auth-error').hide()
   $('#sign-up').hide()
   $('#loginmessage').hide()
@@ -27,6 +28,7 @@ const logInSuccess = function (data) {
 const logOutSuccess = function (data) {
   store.user = null
   // console.log('logged out successfully')
+  $('#signupmessage').text('')
   view.preLogInView()
 }
 const passwordSuccess = function (data) {

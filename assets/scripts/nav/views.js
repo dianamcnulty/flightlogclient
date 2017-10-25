@@ -27,6 +27,7 @@ const landingView = function () {
   $('#flight-table-contents').hide()
   $('#section-header').text('Did you have good flight?')
   $('#section-alerts').text('')
+  $('#signupmessage').text('')
 }
 const profileView = function () {
   $('#password-update').show()
