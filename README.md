@@ -77,5 +77,8 @@ Wireframes
 -   [profile update](planning/profile_update_view.jpg)
 
 
-user stories:
+User stories:
 -   [user stories](planning/user_stories.jpg)
+
+Screen Shot:  
+-   ![github image](/assets/images/ScreenShot.png)
