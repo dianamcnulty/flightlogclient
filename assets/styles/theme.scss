@@ -183,6 +183,15 @@ img {
   width: 60px;
   font-size: 15px;
 }
+.copyright {
+  position: fixed;
+  bottom: 0px;
+  right: 15px;
+  // color: $links;
+}
+.copyright:hover {
+  color:$headers;
+}
 .clearfix:after {
   clear: both;
   content: ''; /* Older browser do not support */
