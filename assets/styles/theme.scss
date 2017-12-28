@@ -12,10 +12,14 @@ body {
   margin: 0;
   background: $background;
 }
-
+// html, body {
+//   height: 100%;
+//   margin: 0;
+// }
 .page {
   padding: 15px 30px;
   width: auto;
+  min-height: calc(100vh - 0px);
 }
 
 h1 {
@@ -183,14 +187,21 @@ img {
   width: 60px;
   font-size: 15px;
 }
-.copyright {
-  position: fixed;
-  bottom: 0px;
-  right: 15px;
-  // color: $links;
-}
+// .copyright {
+//   position: fixed;
+//   bottom: 0px;
+//   right: 15px;
+//   // color: $links;
+// }
 .copyright:hover {
   color:$headers;
+}
+.footer {
+  height: 20px;
+}
+.copyright {
+  float: right;
+  color: $table-background;
 }
 .clearfix:after {
   clear: both;
