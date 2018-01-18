@@ -17,6 +17,7 @@ const preLogInView = function () {
   $('#add-flights-view').hide()
   $('#section-header').text('')
   $('#section-alerts').text('')
+  $('#welcome').css("display", "none")
 }
 const landingView = function () {
   $('#logout').show()
@@ -26,6 +27,7 @@ const landingView = function () {
   $('#navbar').show()
   $('#flight-table-contents').hide()
   $('#section-header').text('Did you have good flight?')
+  $('#welcome').css("display", "block")
   $('#section-alerts').text('')
   $('#signupmessage').text('')
 }
@@ -37,6 +39,7 @@ const profileView = function () {
   $('#stats-view').hide()
   $('#section-header').text('Update Profile Information')
   $('#section-alerts').text('')
+  $('#welcome').css("display", "none")
 }
 const showFlightsView = function () {
   $('#password-update').hide()
@@ -46,6 +49,7 @@ const showFlightsView = function () {
   $('#add-flights-view').hide()
   $('#section-header').text('Your Flight History')
   $('#section-alerts').text('')
+  $('#welcome').css("display", "none")
   flightListEvents.listFlightsBehavior()
 }
 const addFlightsView = function () {
@@ -57,6 +61,7 @@ const addFlightsView = function () {
   $('#section-header').text('Add a Flight')
   $('#section-alerts').text('')
   $('#stats-view').hide()
+  $('#welcome').css("display", "none")
 }
 const statView = function () {
   $('#stats-view').show()
@@ -66,6 +71,7 @@ const statView = function () {
   $('#flight-table-contents').hide()
   $('#section-header').text('Your Stats')
   $('#section-alerts').text('')
+  $('#welcome').css("display", "none")
   flightStatEvents.setStats()
 }
 
