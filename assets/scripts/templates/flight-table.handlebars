@@ -1,4 +1,6 @@
-<table>
+<legend class='search'>Search by Location:
+<input type='text' id='searchbar' class='searchbar' placeholder"search"></legend>
+<table id='flight-table'>
   <thead class='table-header'>
       <th class='show-mobile'>Date</th>
       <th class='show-mobile'>Time</th>
@@ -11,7 +13,7 @@
   </thead>
   <tbody>
   {{#each flights as |flight|}}
-    <tr>
+    <tr class='row1'>
       <td class='show-mobile'>{{flight.date}}</td>
       <td class='show-mobile'>{{flight.time}}</td>
       <td class='show-mobile'>{{flight.launch}}</td>
@@ -21,7 +23,7 @@
       <td class='hide-mobile'>{{flight.wing}}</td>
       <td class='hide-mobile'>{{flight.flight_type}}</td>
     </tr>
-    <tr>
+    <tr class='row2'>
       <td class='hide-mobile note-cell' colspan="6"> <label class='table-label'> Notes:</label>  {{flight.notes}}</td>
       <td class='button-cell'>
         <button data-id="{{flight.id}}" type="button" class="table-button  edit" data-toggle="modal" data-target="#edit-modal">Edit</button>

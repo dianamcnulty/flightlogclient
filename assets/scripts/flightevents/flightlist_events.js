@@ -79,11 +79,31 @@ const confirmDeleteBehavior = function (event) {
     .then(deleteFlightSuccess)
     .catch(() => $('#delete-modal-alert').text('Sorry, there was an error deleting your flight, Please try again later.'))
 }
-
+const searchTable = function() {
+  let input = document.getElementById("searchbar"); //doesn't seem to work with jquery..
+  let filter = input.value.toUpperCase();
+  let table = document.getElementById("flight-table");
+  let row1 = table.getElementsByClassName("row1");
+  let row2 = table.getElementsByClassName("row2");// need to have a row 2 array to match, as each of my flights takes up 2 rows
+  for (let i = 0; i < row1.length; i++) {
+    let launchLocation = row1[i].getElementsByTagName("td")[2];
+    let landingLocation = row1[i].getElementsByTagName("td")[3];
+    if (launchLocation || landingLocation) {
+      if ((launchLocation.innerHTML.toUpperCase().indexOf(filter) > -1) || (landingLocation.innerHTML.toUpperCase().indexOf(filter) > -1)){
+        row1[i].style.display = "";
+        row2[i].style.display = "";//include row 2 so 'notes, edit, etc show up'
+      } else {
+        row1[i].style.display = "none";
+        row2[i].style.display = "none";
+      }
+    }
+  }
+}
 module.exports = {
   listFlightsBehavior,
   editFlight,
   editButtonBehavior,
   deleteButtonBehavior,
-  confirmDeleteBehavior
+  confirmDeleteBehavior,
+  searchTable
 }

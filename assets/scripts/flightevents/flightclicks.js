@@ -10,6 +10,7 @@ const flightClicks = function () {
     $('#delete-modal-alert').text('')
   })
   $('#confirm-delete').on('click', flightListEvents.confirmDeleteBehavior)
+  $(document).on('keyup', '#searchbar' , flightListEvents.searchTable)
 }
 
 module.exports = {
